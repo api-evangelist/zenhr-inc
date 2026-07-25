@@ -1,0 +1,108 @@
+openapi: 3.1.0
+info:
+  title: ZenHR Approvals Bank Account API
+  version: v3
+  description: REST API for the ZenHR HR & payroll platform. Integrate external applications with ZenHR to manage branches, employees, master/professional/financial data, payroll (salaries, financial transactions, loans, overtime), time off, attendance, competencies, HR letters, terminations, business travel, and documents. Responds in JSON with standard HTTP status codes; authenticated via OAuth 2.0 (authorization code + PKCE). Derived by API Evangelist from the provider's published Postman documentation collection.
+  contact:
+    name: ZenHR DevOps
+    email: devops@zenhr.com
+    url: https://api-docs.zenhr.com/
+  x-apievangelist-source: https://api-docs.zenhr.com/ (Postman published collection 2sA3dxDWwR)
+servers:
+- url: https://app.zenhr.com/api/v3
+  description: Production
+- url: https://aiapi.zenhr.com/api/v3
+  description: Attendance ingestion (AI) host
+security:
+- oauth2:
+  - read:employee
+tags:
+- name: Bank Account
+paths:
+  /branches/{branch_id}/employees/{employee_id}/bank_accounts:
+    get:
+      summary: List Employee Bank Account
+      tags:
+      - Bank Account
+      operationId: listEmployeeBankAccount
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              allowed_actions: []
+              pagination:
+                current_page: 1
+                per_page: 25
+                total_entries: 1
+                total_pages: 1
+              data:
+              - id: 71444
+                owner_id: 138679
+                owner_type: Employee
+                bank_branch:
+                  bank_branch_id: 6
+                  id: 6
+                  bank:
+                    id: 1
+                    name:
+                      ar: البنك العربي
+                      en: Arab Bank
+                    country:
+                      country_id: 111
+                      id: 111
+                      name:
+                        ar: الأردن
+                        en: Jordan
+                      country_code: JO
+                      region: mena
+                    routing_id: '10'
+                    short_code: null
+                    swift_code: ARABJOAXXXX
+                  swift_code: null
+                  name:
+                    ar: null
+                    en: Main Branch
+                iban: SA0380000000608010167519
+                bank_account_number: '78342012891'
+                percent_transfer: 100.0
+                related_establishment_number: null
+                swift_code: null
+                exchange_account: ''
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.zenhr.com/en/oauth/authorize
+          tokenUrl: https://api.zenhr.com/en/oauth/token
+          scopes:
+            read:branch: Read branch data
+            read:employee: Read employee data
+            accessed_employees_branches:employee: Access employees within permitted branches
+            read:professional_info: Read employee professional information
+            read:termination: Read termination data
+            read:employee_disciplinary_actions: Read employee disciplinary actions
+            read:financial_transaction: Read financial transactions
+            read:performance_evaluation: Read performance evaluations
+            read:timeoff_transaction: Read time-off transactions

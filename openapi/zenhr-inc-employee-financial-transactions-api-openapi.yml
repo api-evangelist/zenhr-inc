@@ -1,0 +1,201 @@
+openapi: 3.1.0
+info:
+  title: ZenHR Approvals Employee Financial Transactions API
+  version: v3
+  description: REST API for the ZenHR HR & payroll platform. Integrate external applications with ZenHR to manage branches, employees, master/professional/financial data, payroll (salaries, financial transactions, loans, overtime), time off, attendance, competencies, HR letters, terminations, business travel, and documents. Responds in JSON with standard HTTP status codes; authenticated via OAuth 2.0 (authorization code + PKCE). Derived by API Evangelist from the provider's published Postman documentation collection.
+  contact:
+    name: ZenHR DevOps
+    email: devops@zenhr.com
+    url: https://api-docs.zenhr.com/
+  x-apievangelist-source: https://api-docs.zenhr.com/ (Postman published collection 2sA3dxDWwR)
+servers:
+- url: https://app.zenhr.com/api/v3
+  description: Production
+- url: https://aiapi.zenhr.com/api/v3
+  description: Attendance ingestion (AI) host
+security:
+- oauth2:
+  - read:employee
+tags:
+- name: Employee Financial Transactions
+paths:
+  /branches/{branch_id}/employees/{employee_id}/financial_transactions/{financial_transaction_id}:
+    get:
+      summary: List Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: listEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: updateEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: destroyEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_transactions:
+    post:
+      summary: Create Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: createEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_transactions_requests:
+    post:
+      summary: Create Employee Financal Transaction Requests
+      tags:
+      - Employee Financial Transactions
+      operationId: createEmployeeFinancalTransactionRequests
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee}/financial_transactions/{financial_transaction_id}:
+    get:
+      summary: Get Employee Financial Transaction
+      tags:
+      - Employee Financial Transactions
+      operationId: getEmployeeFinancialTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.zenhr.com/en/oauth/authorize
+          tokenUrl: https://api.zenhr.com/en/oauth/token
+          scopes:
+            read:branch: Read branch data
+            read:employee: Read employee data
+            accessed_employees_branches:employee: Access employees within permitted branches
+            read:professional_info: Read employee professional information
+            read:termination: Read termination data
+            read:employee_disciplinary_actions: Read employee disciplinary actions
+            read:financial_transaction: Read financial transactions
+            read:performance_evaluation: Read performance evaluations
+            read:timeoff_transaction: Read time-off transactions
