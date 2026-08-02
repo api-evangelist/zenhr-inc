@@ -1,0 +1,31 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: searched
+source: https://api-docs.zenhr.com/ + openapi/zenhr-inc-openapi.yml
+auth:
+  style: OAuth 2.0 Bearer (authorization code + PKCE)
+  see: authentication/zenhr-inc-authentication.yml
+media_type: application/json
+resource_scoping: 'Most resources are nested under a branch: /branches/{branch_id}/... and often under an employee: /branches/{branch_id}/employees/{employee_id}/...'
+expansion:
+  style: include[] query parameter
+  example: ?include[]=country.cities
+  notes: Related resources are side-loaded via repeated include[] params.
+pagination:
+  style: undocumented-in-spec
+  notes: List endpoints are collection GETs; pagination parameters are not declared in the published collection.
+integration_maps: Stable external references are supported via /branches/{branch_id}/integration_maps/{resource}/{global_id}
+  lookups (get/update by your own global id).
+idempotency:
+  supported: false
+  notes: No idempotency-key header documented.
+rate_limit_signal:
+  production: 15 req / 4s
+  sandbox: 10 req / 5s
+  see: lifecycle/zenhr-inc-lifecycle.yml
+errors:
+  style: standard HTTP status codes + JSON body
+  see: errors/zenhr-inc-problem-types.yml
+versioning:
+  scheme: uri-path v3
+  see: lifecycle/zenhr-inc-lifecycle.yml

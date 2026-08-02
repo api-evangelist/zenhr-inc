@@ -1,0 +1,18 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for ZenHR API
+  version: 1.0.0
+extends: openapi/zenhr-inc-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-rating: 3
+    x-apievangelist-source: Derived from ZenHR published Postman collection (api-docs.zenhr.com)
+    x-rate-limits:
+      production: 15/4s
+      sandbox: 10/5s
+- target: $
+  update:
+    x-well-known:
+      security.txt: https://api.zenhr.com/.well-known/security.txt
+      oauth-authorization-server: https://api.zenhr.com/.well-known/oauth-authorization-server

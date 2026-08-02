@@ -1,0 +1,22 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: searched
+probe: true
+url: https://trust.zenhr.com/
+platform: Vanta
+certifications:
+- SOC 2 Type II
+security_practices:
+- Encryption at rest (S3 + row-level for sensitive data)
+- TLS in transit + HSTS
+- Annual third-party penetration testing
+evidence:
+- source: https://trust.zenhr.com/
+  keywords:
+  - trust center
+  - vanta
+- source: https://www.zenhr.com/en/security-and-privacy
+  keywords:
+  - soc 2 type ii
+  - penetration testing
+  - encryption

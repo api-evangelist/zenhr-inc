@@ -1,0 +1,69 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: searched
+source: https://api.zenhr.com/.well-known/oauth-authorization-server
+docs: https://api-docs.zenhr.com/
+notes: Scopes are selected per integration app when registered at /en/oauth/applications. List is authoritative from the published
+  RFC 8414 authorization-server metadata (scopes_supported).
+schemes:
+- name: oauth2
+  source: https://api.zenhr.com/.well-known/oauth-authorization-server
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.zenhr.com/en/oauth/authorize
+    tokenUrl: https://api.zenhr.com/en/oauth/token
+scopes:
+- scope: read:branch
+  description: Read branch data
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: read:employee
+  description: Read employee data
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: accessed_employees_branches:employee
+  description: Access employees within the branches permitted to the app
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: read:professional_info
+  description: Read employee professional information
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: read:termination
+  description: Read termination data
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: read:employee_disciplinary_actions
+  description: Read employee disciplinary actions
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: read:financial_transaction
+  description: Read financial transactions
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: read:performance_evaluation
+  description: Read performance evaluations
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server
+- scope: read:timeoff_transaction
+  description: Read time-off transactions
+  flows:
+  - authorizationCode
+  sources:
+  - https://api.zenhr.com/.well-known/oauth-authorization-server

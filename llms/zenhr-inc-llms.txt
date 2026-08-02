@@ -1,0 +1,77 @@
+﻿# ZenHR HR System
+
+
+> ZenHR is a transformative HR experience localized to reflect GOSI, WPS, social security, and tax laws in KSA, Egypt, Jordan, Iraq, UAE, and MENA.
+> ZenHR's HRMS is completely localized reflecting all local labor laws and regulations in MENA including but not limited to GOSI, WPS, social security, and tax laws. This provides you with the flexibility that you need to manage payroll in an automated way while ensuring compliance with your local HR-related laws and payroll regulations.
+> ZenHR employs a bilingual (English and Arabic) user interface, as well as a bilingual mobile app, which aims to enhance the user experience of your employees and improve engagement in their teams.
+> This document serves as a curated guide for language-model agents, offering a clear overview of the most relevant and valuable pages on zenhr.com to facilitate efficient data training and understanding.
+> All URLs listed below are permitted for use in training under the CC-BY license, with attribution requested.  
+> Please adhere to the specified crawl-delay recommendations and avoid accessing the paths indicated under the Disallowed section to respect server load and privacy considerations.
+
+
+Our full HTML sitemap lives at https://www.zenhr.com/sitemap.xml, but the list below is hand-curated for maximum signal-to-token efficiency.
+
+
+## ZenHR Software
+
+
+- [Payroll](https://www.zenhr.com/en/modules/payroll): ZenHR payroll automates salary, tax, and social security with GOSI and WPS compliance. Manage overtime, health insurance, cost centers, and multi-branch payroll.
+- [Attendance and Time-Tracking](https://www.zenhr.com/en/modules/attendance-and-time-tracking): Streamline attendance monitoring with ZenHR Attendance to produce precise real-time reports, oversee overtime, effectively pinpoint attendance discrepancies.
+- [Employee Self-Service (ESS)](https://www.zenhr.com/en/modules/employee-self-service): Empower employees with ZenHR’s Employee Self-Service module: access salary slips, manage leave requests, submit documents, and stay connected anytime via mobile app—reducing HR workload and boosting workplace efficiency
+- [Employee Management](https://www.zenhr.com/en/modules/employee-management): Employee Management centralizes all employee data and HR tasks in one place. Streamlines workflows, automates processes, boosts efficiency, and ensures compliance.
+- [Reporting & Analytics](https://www.zenhr.com/en/modules/reporting-and-analytics):Gain actionable HR insights with ZenHR’s Reports & Analytics module. Create custom reports, track trends, ensure compliance, and improve decision-making efficiency.
+- [Performance and Evaluation](https://www.zenhr.com/en/modules/performance-and-evaluation): Enhance performance assessments with ZenHR’s Evaluation module, which keeps employees aligned with their goals while reducing the workload for HR tasks.
+- [Applicant Tracking System (ZenATS)](https://www.zenhr.com/en/modules/applicant-tracking-system): Organize recruitment effectively using integrated ZenATS Applicant Tracking system within ZenHR, which simplifies the processing of thousands of applications.
+- [ZenHR's Main HR Modules & Features](https://www.zenhr.com/en/modules): ZenHR is designed to streamline your HR processes like payroll, attendance, onboarding, offboarding, performance evaluation, recruitment, and more.
+- [Marketplace Integrations](https://www.zenhr.com/en/marketplace-integration): Our native integrations allow you to automatically share data in near real-time from ZenHR to the other applications and platforms that you use daily.
+- [Employee Self-Service (ESS) Mobile App](https://www.zenhr.com/en/mobile): ZenHR's ESS mobile app allows employees to download salary slips, request time off, automate time-tracking, and view work schedules and shifts.
+
+
+## Resourses
+
+
+- [Blog](https://blog.zenhr.com/en): ZenHR HR Blog for Human Resources Management | Latest trends in HR management, technology, and tips on improving HR processes.
+- [HR White Papers](https://www.zenhr.com/en/whitepapers): HR white papers and research covering top trends in HR automation and technology, recruitment and selection, and HR management.
+- [Frequently Asked Questions (FAQs)](https://www.zenhr.com/en/faqs): Get instant answers to frequently asked questions about ZenHR's comprehensive HR management system, payroll features, and employee management tools.
+- [HR Glossary and Dictionary](https://www.zenhr.com/en/glossary): A comprehensive A to Z glossary defining key HR terms and buzzwords popular in HR and recruitment to help you expand your HR knowledge.
+- [Customer Case Studies and Success Stories](https://www.zenhr.com/en/hr-case-studies): Check out ZenHR's customer case studies and success stories and see how they saved their time and money by choosing ZenHR.
+- [Service Termination Benefits Calculator](https://www.zenhr.com/en/service-termination-benefits-calculator): Calculate employee service termination benefits accurately with ZenHR's free online calculator. Get instant results for end-of-service gratuity payments.
+- [Salary Calculator](https://www.zenhr.com/en/salary-calculator): Easily determine net salaries with ZenHR’s salary calculator, which outlines deductions for taxes and social security across Saudi Arabia, Egypt, UAE, and more.
+- [HR Letters and Templates](https://www.zenhr.com/en/hr-letters-templates): ZenHR's editable HR letters and templates in word format help your HR department draft HR letters and emails quickly and free.
+- [ZenHR APIs Documentation](https://api-docs.zenhr.com/): ZenHR APIs Documentation
+
+
+## About ZenHR
+
+
+- [About ZenHR | Our Values, Team and Culture](https://www.zenhr.com/en/about): Get a glimpse into the leading HR software solutions company in the middle east, ZenHR, and learn more about our values, culture, team, and mission.
+- [ZenHR Awards](https://www.zenhr.com/en/awards): ZenHR is an award-winning and top-rated HR software solution and has been recognized by several world-class online portals as the best HRMS in MENA.
+- [Customer Testimonials and Success Stories](https://www.zenhr.com/en/testimonials): Explore our customer testimonials and how ZenHR frees them from mundane and time-consuming HR tasks by automating their HR processes.
+- [Become a Channel and Referral Partner](https://www.zenhr.com/en/partners): Become a ZenHR channel partner and work with a dedicated team of sales, tech, and marketing to support your efforts.
+- [ZenHR Careers Page](https://careers.zenhr.com/en/careers_page): Discover career opportunities at ZenHR. Explore a range of roles and be part of our professional team.
+
+
+## Meeting With ZenHR
+
+
+- [Schedule a Meeting With ZenHR](https://www.zenhr.com/en/schedule-meeting): Book your meeting with ZenHR now, and meet with one of our HR Software Consultants for a live demo of ZenHR's HRMS.
+
+
+## Social Media
+
+
+- [Facebook](https://facebook.com/ZenHR-1664430587188637): Connect with ZenHR on Facebook.
+- [Instagram](https://www.instagram.com/zenhrms/): Follow ZenHR on Instagram for visual content.
+- [LinkedIn](https://www.linkedin.com/company/zenhr/): Connect with ZenHR on LinkedIn.
+- [X](https://x.com/zenhrms): Connect with ZenHR on X.
+- [YouTube](https://www.youtube.com/channel/UCzySK9TivxAm1-iF72GnR5g/featured): Watch videos and tutorials on ZenHR channel.
+
+
+##Multilingual Access
+
+
+The entire website, including all products and information, is fully translated and available in the following languages:
+
+
+- [Arabic](https://www.zenhr.com/ar/home): Arabic language version of the website.
+- [English](https://www.zenhr.com/): English language version of the website.

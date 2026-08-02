@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: generated
+api: openapi/zenhr-inc-openapi.yml
+skills:
+- file: zenhr-inc-onboard-employee.md
+  name: Onboard an employee into a branch
+  api: openapi/zenhr-inc-openapi.yml
+  operations:
+  - listBranches
+  - createEmployee
+  - createEmployeeProfessionalData
+  - createEmployeeFinancialData
+  - getEmployee
+- file: zenhr-inc-request-time-off.md
+  name: Request time off for an employee
+  api: openapi/zenhr-inc-openapi.yml
+  operations:
+  - whoAmI
+  - listEmployees
+  - createTimeoffTransactionRequest
+- file: zenhr-inc-post-payroll-transaction.md
+  name: Post a financial transaction to payroll
+  api: openapi/zenhr-inc-openapi.yml
+  operations:
+  - listEmployees
+  - createEmployeeFinancalTransactions
+  - listBranchSalaries

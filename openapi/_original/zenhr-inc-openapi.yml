@@ -1,0 +1,6230 @@
+openapi: 3.1.0
+info:
+  title: ZenHR API
+  version: v3
+  description: REST API for the ZenHR HR & payroll platform. Integrate external applications with ZenHR to manage branches,
+    employees, master/professional/financial data, payroll (salaries, financial transactions, loans, overtime), time off,
+    attendance, competencies, HR letters, terminations, business travel, and documents. Responds in JSON with standard HTTP
+    status codes; authenticated via OAuth 2.0 (authorization code + PKCE). Derived by API Evangelist from the provider's published
+    Postman documentation collection.
+  contact:
+    name: ZenHR DevOps
+    email: devops@zenhr.com
+    url: https://api-docs.zenhr.com/
+  x-apievangelist-source: https://api-docs.zenhr.com/ (Postman published collection 2sA3dxDWwR)
+servers:
+- url: https://app.zenhr.com/api/v3
+  description: Production
+- url: https://aiapi.zenhr.com/api/v3
+  description: Attendance ingestion (AI) host
+tags:
+- name: Approvals
+- name: Attendance Details
+- name: Bank Account
+- name: Bank Accounts
+- name: Bank Branches
+- name: Banks
+- name: Branch Employee Shifts
+- name: Branches
+- name: Business Travel Policies
+- name: Business Travel Setup
+- name: Business Trips
+- name: Business Units
+- name: Competencies
+- name: Competencies Categories
+- name: Countries
+- name: Departments
+- name: Divisions
+- name: Document Types
+- name: Documents
+- name: Employee Competencies
+- name: Employee Financial Transactions
+- name: Employee Master Data
+- name: Employee Shifts
+- name: Employee Timeoff Transaction
+- name: Employees
+- name: Employees HR Letters
+- name: Employees Termination
+- name: Families
+- name: Financial Data
+- name: Financial Transaction Types
+- name: Financial Transactions
+- name: General
+- name: Governmental Information
+- name: HR Letter Templates
+- name: HR Letter Types
+- name: Hirearchy Groups
+- name: Level Scales
+- name: Loan Types
+- name: Loans
+- name: Main Projects
+- name: Miscellaneous Requests
+- name: Miscellaneous Types
+- name: Overtime Types
+- name: Overtimes
+- name: Positions
+- name: Professional Data
+- name: Recurring Transaction
+- name: Request Events
+- name: Salaries
+- name: Sections
+- name: Segments
+- name: Termination Setup
+- name: Terminations
+- name: Timeoff Transaction
+- name: Timeoffs
+- name: Users
+- name: Work Location
+- name: Work Shifts
+security:
+- oauth2:
+  - read:employee
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.zenhr.com/en/oauth/authorize
+          tokenUrl: https://api.zenhr.com/en/oauth/token
+          scopes:
+            read:branch: Read branch data
+            read:employee: Read employee data
+            accessed_employees_branches:employee: Access employees within permitted branches
+            read:professional_info: Read employee professional information
+            read:termination: Read termination data
+            read:employee_disciplinary_actions: Read employee disciplinary actions
+            read:financial_transaction: Read financial transactions
+            read:performance_evaluation: Read performance evaluations
+            read:timeoff_transaction: Read time-off transactions
+paths:
+  /company:
+    get:
+      summary: company
+      tags:
+      - General
+      operationId: company
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /who_am_i:
+    get:
+      summary: who am i
+      tags:
+      - General
+      operationId: whoAmI
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /branches:
+    get:
+      summary: List Branches
+      tags:
+      - Branches
+      operationId: listBranches
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /branches/{branch_id}:
+    get:
+      summary: Get Branch
+      tags:
+      - Branches
+      operationId: getBranch
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/salaries:
+    get:
+      summary: List Branch Salaries
+      tags:
+      - Branches
+      operationId: listBranchSalaries
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/main_projects:
+    get:
+      summary: List Main Projects
+      tags:
+      - Main Projects
+      operationId: listMainProjects
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/main_projects/{main_project_id}:
+    get:
+      summary: Get Main Project
+      tags:
+      - Main Projects
+      operationId: getMainProject
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: main_project_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Main Project
+      tags:
+      - Main Projects
+      operationId: deleteMainProject
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: main_project_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Main Project
+      tags:
+      - Main Projects
+      operationId: createMainProject
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: main_project_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hierarchy_groups:
+    get:
+      summary: List Hirearchy Groups
+      tags:
+      - Hirearchy Groups
+      operationId: listHirearchyGroups
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hierarchy_groups/{hierarchy_group_id}:
+    get:
+      summary: Get Hirearchy Group
+      tags:
+      - Hirearchy Groups
+      operationId: getHirearchyGroup
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hierarchy_group_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Hirearchy Group
+      tags:
+      - Hirearchy Groups
+      operationId: deleteHirearchyGroup
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hierarchy_group_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Hierarchy Group
+      tags:
+      - Hirearchy Groups
+      operationId: createHierarchyGroup
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hierarchy_group_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/departments:
+    get:
+      summary: List Departments
+      tags:
+      - Departments
+      operationId: listDepartments
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/departments/{department_id}:
+    get:
+      summary: Get Department
+      tags:
+      - Departments
+      operationId: getDepartment
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: department_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Department
+      tags:
+      - Departments
+      operationId: deleteDepartment
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: department_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Department
+      tags:
+      - Departments
+      operationId: createDepartment
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: department_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/sections:
+    get:
+      summary: List Sections
+      tags:
+      - Sections
+      operationId: listSections
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Section
+      tags:
+      - Sections
+      operationId: createSection
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/sections/{section_id}:
+    get:
+      summary: Get Section
+      tags:
+      - Sections
+      operationId: getSection
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: section_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Section
+      tags:
+      - Sections
+      operationId: updateSection
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: section_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Section
+      tags:
+      - Sections
+      operationId: deleteSection
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: section_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/sites:
+    get:
+      summary: List Work Locations
+      tags:
+      - Work Location
+      operationId: listWorkLocations
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/sites/{site_id}:
+    get:
+      summary: Get Work Location
+      tags:
+      - Work Location
+      operationId: getWorkLocation
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Work Location
+      tags:
+      - Work Location
+      operationId: deleteWorkLocation
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Work Location
+      tags:
+      - Work Location
+      operationId: createWorkLocation
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_units:
+    get:
+      summary: List Business Units
+      tags:
+      - Business Units
+      operationId: listBusinessUnits
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Business Unit
+      tags:
+      - Business Units
+      operationId: createBusinessUnit
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_units/{business_unit_id}:
+    get:
+      summary: Get Business Unit
+      tags:
+      - Business Units
+      operationId: getBusinessUnit
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_unit_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Business Unit
+      tags:
+      - Business Units
+      operationId: deleteBusinessUnit
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_unit_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/segments:
+    get:
+      summary: List Segments
+      tags:
+      - Segments
+      operationId: listSegments
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/segments/{segment_id}:
+    get:
+      summary: Show Segments
+      tags:
+      - Segments
+      operationId: showSegments
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: segment_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Segments
+      tags:
+      - Segments
+      operationId: createSegments
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: segment_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Segments
+      tags:
+      - Segments
+      operationId: deleteSegments
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: segment_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/divisions:
+    get:
+      summary: List Divisions
+      tags:
+      - Divisions
+      operationId: listDivisions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Division
+      tags:
+      - Divisions
+      operationId: createDivision
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/divisions/{division_id}:
+    get:
+      summary: Show Division
+      tags:
+      - Divisions
+      operationId: showDivision
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: division_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Division
+      tags:
+      - Divisions
+      operationId: deleteDivision
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: division_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/positions:
+    get:
+      summary: List Positions
+      tags:
+      - Positions
+      operationId: listPositions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Position
+      tags:
+      - Positions
+      operationId: createPosition
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/positions/{position_id}:
+    get:
+      summary: Get Position
+      tags:
+      - Positions
+      operationId: getPosition
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: position_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Position
+      tags:
+      - Positions
+      operationId: editPosition
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: position_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /users/{user_id}:
+    get:
+      summary: List users
+      tags:
+      - Users
+      operationId: listUsers
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete User
+      tags:
+      - Users
+      operationId: deleteUser
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create User
+      tags:
+      - Users
+      operationId: createUser
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update User
+      tags:
+      - Users
+      operationId: updateUser
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees:
+    get:
+      summary: List Employees
+      tags:
+      - Employee Master Data
+      operationId: listEmployees
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Employee
+      tags:
+      - Employee Master Data
+      operationId: createEmployee
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}:
+    get:
+      summary: Get Employee
+      tags:
+      - Employee Master Data
+      operationId: getEmployee
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Employee
+      tags:
+      - Employee Master Data
+      operationId: updateEmployee
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/professional_data:
+    get:
+      summary: List Employee Professional Data
+      tags:
+      - Professional Data
+      operationId: listEmployeeProfessionalData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Employee Professional Data
+      tags:
+      - Professional Data
+      operationId: createEmployeeProfessionalData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/professional_data/{professional_data_id}:
+    patch:
+      summary: Update Employee Professional Data
+      tags:
+      - Professional Data
+      operationId: updateEmployeeProfessionalData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: professional_data_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Employee Professional Data
+      tags:
+      - Professional Data
+      operationId: destroyEmployeeProfessionalData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: professional_data_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/professional_data/active:
+    get:
+      summary: Get Employee Active Professional Data
+      tags:
+      - Professional Data
+      operationId: getEmployeeActiveProfessionalData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_data:
+    get:
+      summary: List Employee Financial Data
+      tags:
+      - Financial Data
+      operationId: listEmployeeFinancialData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Employee Financial Data
+      tags:
+      - Financial Data
+      operationId: createEmployeeFinancialData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_data/{financial_datum_id}:
+    patch:
+      summary: Update Employee Financial Data
+      tags:
+      - Financial Data
+      operationId: updateEmployeeFinancialData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_datum_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Employee Financial Data
+      tags:
+      - Financial Data
+      operationId: destroyEmployeeFinancialData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_datum_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_data/active:
+    get:
+      summary: Get Employee Active Financial Data
+      tags:
+      - Financial Data
+      operationId: getEmployeeActiveFinancialData
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_data/{financial_datum_id}/recurring_transactions:
+    get:
+      summary: List Recurring Transactions
+      tags:
+      - Recurring Transaction
+      operationId: listRecurringTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_datum_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Recurring Transaction
+      tags:
+      - Recurring Transaction
+      operationId: createRecurringTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_datum_id
+        in: path
+        required: true
+        schema:
+          type: string
+  ? /branches/{branch_id}/employees/{employee_id}/financial_data/{financial_datum_id}/recurring_transactions/{recuuring_transaction_id}
+  : patch:
+      summary: Update Recurring Transaction
+      tags:
+      - Recurring Transaction
+      operationId: updateRecurringTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_datum_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: recuuring_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Recurring Transaction
+      tags:
+      - Recurring Transaction
+      operationId: destroyRecurringTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_datum_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: recuuring_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get Recurring Transaction
+      tags:
+      - Recurring Transaction
+      operationId: getRecurringTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_datum_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: recuuring_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/salaries:
+    get:
+      summary: Get Employee Salary
+      tags:
+      - Salaries
+      operationId: getEmployeeSalary
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/salaries/{salary_id}:
+    patch:
+      summary: Update Salary Financial Integration Status
+      tags:
+      - Salaries
+      operationId: updateSalaryFinancialIntegrationStatus
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: salary_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_transactions/{financial_transaction_id}:
+    get:
+      summary: List Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: listEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: updateEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: destroyEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_transactions:
+    post:
+      summary: Create Employee Financal Transactions
+      tags:
+      - Employee Financial Transactions
+      operationId: createEmployeeFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/financial_transactions_requests:
+    post:
+      summary: Create Employee Financal Transaction Requests
+      tags:
+      - Employee Financial Transactions
+      operationId: createEmployeeFinancalTransactionRequests
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee}/financial_transactions/{financial_transaction_id}:
+    get:
+      summary: Get Employee Financial Transaction
+      tags:
+      - Employee Financial Transactions
+      operationId: getEmployeeFinancialTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/timeoff_transactions:
+    get:
+      summary: List Employee Timeoff Transactions
+      tags:
+      - Employee Timeoff Transaction
+      operationId: listEmployeeTimeoffTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/timeoff_transactions/{timeoff_transaction_id}:
+    get:
+      summary: Get Employee Timeoff Transaction
+      tags:
+      - Employee Timeoff Transaction
+      operationId: getEmployeeTimeoffTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: timeoff_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/timeoff_transaction_requests:
+    post:
+      summary: Create Timeoff Transaction Request
+      tags:
+      - Employee Timeoff Transaction
+      operationId: createTimeoffTransactionRequest
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/employee_competencies:
+    get:
+      summary: List Employee Competencies
+      tags:
+      - Employee Competencies
+      operationId: listEmployeeCompetencies
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Employee Competency
+      tags:
+      - Employee Competencies
+      operationId: createEmployeeCompetency
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/employee_competencies/{employee_competency_id}:
+    get:
+      summary: Get Employee Competency
+      tags:
+      - Employee Competencies
+      operationId: getEmployeeCompetency
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_competency_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Employee Competency
+      tags:
+      - Employee Competencies
+      operationId: updateEmployeeCompetency
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_competency_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Competency
+      tags:
+      - Employee Competencies
+      operationId: deleteCompetency
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_competency_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/approvals:
+    get:
+      summary: List Approvals
+      tags:
+      - Approvals
+      operationId: listApprovals
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/approvals/{approval_id}:
+    get:
+      summary: Get Approval
+      tags:
+      - Approvals
+      operationId: getApproval
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: approval_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/overtimes:
+    get:
+      summary: List Overtime
+      tags:
+      - Overtimes
+      operationId: listOvertime
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Overtime
+      tags:
+      - Overtimes
+      operationId: createOvertime
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/overtimes/{overtime_id}:
+    get:
+      summary: Get Overtime
+      tags:
+      - Overtimes
+      operationId: getOvertime
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Overtime
+      tags:
+      - Overtimes
+      operationId: destroyOvertime
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Overtime
+      tags:
+      - Overtimes
+      operationId: editOvertime
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/overtime_requests:
+    post:
+      summary: Create Overtime Request
+      tags:
+      - Overtimes
+      operationId: createOvertimeRequest
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/loans:
+    get:
+      summary: List Loans
+      tags:
+      - Loans
+      operationId: listLoans
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Loan
+      tags:
+      - Loans
+      operationId: createLoan
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/loans/{loan_id}:
+    get:
+      summary: Get Loan
+      tags:
+      - Loans
+      operationId: getLoan
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Loan
+      tags:
+      - Loans
+      operationId: destroyLoan
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Loan
+      tags:
+      - Loans
+      operationId: editLoan
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/loan_requests:
+    post:
+      summary: Create Loan Request
+      tags:
+      - Loans
+      operationId: createLoanRequest
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/miscellaneous_requests:
+    get:
+      summary: List Employees Miscellaneous Requests
+      tags:
+      - Miscellaneous Requests
+      operationId: listEmployeesMiscellaneousRequests
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Miscellaneous Request
+      tags:
+      - Miscellaneous Requests
+      operationId: createMiscellaneousRequest
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/miscellaneous_requests/{miscellaneous_request_id}:
+    get:
+      summary: Show Employees Miscellaneous Requests
+      tags:
+      - Miscellaneous Requests
+      operationId: showEmployeesMiscellaneousRequests
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: miscellaneous_request_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/bank_accounts:
+    get:
+      summary: List Employee Bank Account
+      tags:
+      - Bank Account
+      operationId: listEmployeeBankAccount
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              allowed_actions: []
+              pagination:
+                current_page: 1
+                per_page: 25
+                total_entries: 1
+                total_pages: 1
+              data:
+              - id: 71444
+                owner_id: 138679
+                owner_type: Employee
+                bank_branch:
+                  bank_branch_id: 6
+                  id: 6
+                  bank:
+                    id: 1
+                    name:
+                      ar: البنك العربي
+                      en: Arab Bank
+                    country:
+                      country_id: 111
+                      id: 111
+                      name:
+                        ar: الأردن
+                        en: Jordan
+                      country_code: JO
+                      region: mena
+                    routing_id: '10'
+                    short_code: null
+                    swift_code: ARABJOAXXXX
+                  swift_code: null
+                  name:
+                    ar: null
+                    en: Main Branch
+                iban: SA0380000000608010167519
+                bank_account_number: '78342012891'
+                percent_transfer: 100.0
+                related_establishment_number: null
+                swift_code: null
+                exchange_account: ''
+  /branches/{branch_id}/employees/{employee_id}/families:
+    get:
+      summary: List Employee Families
+      tags:
+      - Families
+      operationId: listEmployeeFamilies
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Family
+      tags:
+      - Families
+      operationId: createFamily
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/families/{family_id}:
+    get:
+      summary: Show Family
+      tags:
+      - Families
+      operationId: showFamily
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: family_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Family
+      tags:
+      - Families
+      operationId: deleteFamily
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: family_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Family
+      tags:
+      - Families
+      operationId: updateFamily
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: family_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/employee_shifts:
+    get:
+      summary: List Employee Shifts
+      tags:
+      - Employee Shifts
+      operationId: listEmployeeShifts
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Employee Shift
+      tags:
+      - Employee Shifts
+      operationId: createEmployeeShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/employee_shifts/{work_shift_id}:
+    get:
+      summary: Show Employee Shifts
+      tags:
+      - Employee Shifts
+      operationId: showEmployeeShifts
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: work_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Employee Shift
+      tags:
+      - Employee Shifts
+      operationId: deleteEmployeeShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: work_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Employee Shift
+      tags:
+      - Employee Shifts
+      operationId: updateEmployeeShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: work_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/terminations:
+    post:
+      summary: Create Termination
+      tags:
+      - Employees Termination
+      operationId: createTermination
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employees/{employee_id}/terminations/{termination_id}:
+    delete:
+      summary: Delete Termination
+      tags:
+      - Employees Termination
+      operationId: deleteTermination
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: termination_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/timeoffs:
+    get:
+      summary: List Timeoffs
+      tags:
+      - Timeoffs
+      operationId: listTimeoffs
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/timeoffs/{timeoff_id}:
+    get:
+      summary: Get Timeoff
+      tags:
+      - Timeoffs
+      operationId: getTimeoff
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: timeoff_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/timeoff_transactions:
+    get:
+      summary: List Timeoff Transactions
+      tags:
+      - Timeoff Transaction
+      operationId: listTimeoffTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/timeoff_transactions/{timeoff_transaction_id}:
+    get:
+      summary: Get Timeoff Transaction
+      tags:
+      - Timeoff Transaction
+      operationId: getTimeoffTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: timeoff_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/timeoff_transaction_requests/{timeoff_transaction_request_id}:
+    post:
+      summary: Create Timeoff Transaction Request
+      tags:
+      - Timeoff Transaction
+      operationId: createTimeoffTransactionRequest2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: timeoff_transaction_request_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/financial_transaction_types:
+    get:
+      summary: List Financal Transaction Types
+      tags:
+      - Financial Transaction Types
+      operationId: listFinancalTransactionTypes
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Financial Transaction Type Copy
+      tags:
+      - Financial Transaction Types
+      operationId: createFinancialTransactionTypeCopy
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/financial_transaction_types/{financial_transaction_type_id}:
+    get:
+      summary: Get Financial Transaction Type
+      tags:
+      - Financial Transaction Types
+      operationId: getFinancialTransactionType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Financial Transaction Type Copy 2
+      tags:
+      - Financial Transaction Types
+      operationId: updateFinancialTransactionTypeCopy2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Financial Transaction Type Copy 3
+      tags:
+      - Financial Transaction Types
+      operationId: deleteFinancialTransactionTypeCopy3
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/financial_transactions:
+    get:
+      summary: List Financal Transactions
+      tags:
+      - Financial Transactions
+      operationId: listFinancalTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Financial Transaction
+      tags:
+      - Financial Transactions
+      operationId: createFinancialTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/financial_transactions/{financial_transaction_id}:
+    get:
+      summary: Get Financial Transaction
+      tags:
+      - Financial Transactions
+      operationId: getFinancialTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Financial Transaction
+      tags:
+      - Financial Transactions
+      operationId: editFinancialTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Financial Transaction
+      tags:
+      - Financial Transactions
+      operationId: destroyFinancialTransaction
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: financial_transaction_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/loan_types/{loan_type_id}:
+    get:
+      summary: List Loan Types
+      tags:
+      - Loan Types
+      operationId: listLoanTypes
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Loan Type
+      tags:
+      - Loan Types
+      operationId: createLoanType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Loan Type
+      tags:
+      - Loan Types
+      operationId: editLoanType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/loans:
+    get:
+      summary: List Loans
+      tags:
+      - Loans
+      operationId: listLoans2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Loan
+      tags:
+      - Loans
+      operationId: createLoan2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/loans/{loan_id}:
+    get:
+      summary: Get Loan
+      tags:
+      - Loans
+      operationId: getLoan2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Loan
+      tags:
+      - Loans
+      operationId: destroyLoan2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Loan
+      tags:
+      - Loans
+      operationId: editLoan2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: loan_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/overtime_types:
+    get:
+      summary: List Overtime Types
+      tags:
+      - Overtime Types
+      operationId: listOvertimeTypes
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Overtime Type
+      tags:
+      - Overtime Types
+      operationId: createOvertimeType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/overtime_types/{overtime_type_id}:
+    get:
+      summary: Get Overtime Type
+      tags:
+      - Overtime Types
+      operationId: getOvertimeType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Overtime Type
+      tags:
+      - Overtime Types
+      operationId: destroyOvertimeType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Overtime Type
+      tags:
+      - Overtime Types
+      operationId: editOvertimeType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/overtimes:
+    get:
+      summary: List Overtime
+      tags:
+      - Overtimes
+      operationId: listOvertime2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Overtime
+      tags:
+      - Overtimes
+      operationId: createOvertime2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/overtimes/{overtime_id}:
+    get:
+      summary: Get Overtime
+      tags:
+      - Overtimes
+      operationId: getOvertime2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Overtime
+      tags:
+      - Overtimes
+      operationId: destroyOvertime2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Overtime
+      tags:
+      - Overtimes
+      operationId: editOvertime2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: overtime_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories/{competencies_category_id}/competencies:
+    get:
+      summary: List Competencies
+      tags:
+      - Competencies
+      operationId: listCompetencies
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Competency
+      tags:
+      - Competencies
+      operationId: createCompetency
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories/{competencies_category_id}/competencies/{competency_id }:
+    get:
+      summary: Get Competency
+      tags:
+      - Competencies
+      operationId: getCompetency
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: 'competency_id '
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories/{competencies_category_id}/competencies/{competency_id}:
+    patch:
+      summary: Update Competency
+      tags:
+      - Competencies
+      operationId: updateCompetency
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competency_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Competency
+      tags:
+      - Competencies
+      operationId: deleteCompetency2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competency_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories/{competencies_category_id}/level_scales:
+    get:
+      summary: List Level Scales
+      tags:
+      - Level Scales
+      operationId: listLevelScales
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Level Scale
+      tags:
+      - Level Scales
+      operationId: createLevelScale
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories/{competencies_category_id}/level_scales/{level_scale_id }:
+    get:
+      summary: Get Level Scale
+      tags:
+      - Level Scales
+      operationId: getLevelScale
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: 'level_scale_id '
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories/{competencies_category_id}/level_scales/{level_scale_id}:
+    patch:
+      summary: Update Level Scale
+      tags:
+      - Level Scales
+      operationId: updateLevelScale
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: level_scale_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Level Scale
+      tags:
+      - Level Scales
+      operationId: deleteLevelScale
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: level_scale_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories:
+    get:
+      summary: List Competencies Categories
+      tags:
+      - Competencies Categories
+      operationId: listCompetenciesCategories
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Competencies Category
+      tags:
+      - Competencies Categories
+      operationId: createCompetenciesCategory
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/competencies_categories/{competencies_category_id}:
+    get:
+      summary: Get Competencies Category
+      tags:
+      - Competencies Categories
+      operationId: getCompetenciesCategory
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Competencies Category
+      tags:
+      - Competencies Categories
+      operationId: updateCompetenciesCategory
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Competencies Category
+      tags:
+      - Competencies Categories
+      operationId: deleteCompetenciesCategory
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: competencies_category_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hr_letter_types:
+    get:
+      summary: List HR Letter Types
+      tags:
+      - HR Letter Types
+      operationId: listHrLetterTypes
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create HR Letter Type
+      tags:
+      - HR Letter Types
+      operationId: createHrLetterType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hr_letter_types/{hr_letter_type_id}:
+    get:
+      summary: Get HR Letter Type
+      tags:
+      - HR Letter Types
+      operationId: getHrLetterType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update HR Letter Type
+      tags:
+      - HR Letter Types
+      operationId: updateHrLetterType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete HR Letter Type
+      tags:
+      - HR Letter Types
+      operationId: deleteHrLetterType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hr_letter_templates:
+    get:
+      summary: List HR Letter Templates
+      tags:
+      - HR Letter Templates
+      operationId: listHrLetterTemplates
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create HR Letter Template
+      tags:
+      - HR Letter Templates
+      operationId: createHrLetterTemplate
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hr_letter_templates/{hr_letter_template_id}:
+    get:
+      summary: Get HR Letter Template
+      tags:
+      - HR Letter Templates
+      operationId: getHrLetterTemplate
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_template_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update HR Letter Template
+      tags:
+      - HR Letter Templates
+      operationId: updateHrLetterTemplate
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_template_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete HR Letter Template
+      tags:
+      - HR Letter Templates
+      operationId: deleteHrLetterTemplate
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_template_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hr_letters:
+    get:
+      summary: List HR Letters
+      tags:
+      - Employees HR Letters
+      operationId: listHrLetters
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create HR Letter
+      tags:
+      - Employees HR Letters
+      operationId: createHrLetter
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/hr_letters/{hr_letter_id}:
+    get:
+      summary: Get HR Letter
+      tags:
+      - Employees HR Letters
+      operationId: getHrLetter
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update HR Letter
+      tags:
+      - Employees HR Letters
+      operationId: updateHrLetter
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete HR Letter
+      tags:
+      - Employees HR Letters
+      operationId: deleteHrLetter
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: hr_letter_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/integration_maps/employee/{global_id}:
+    get:
+      summary: Get Employee by GL_ID
+      tags:
+      - Employees
+      operationId: getEmployeeByGlId
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Employee by GL_ID
+      tags:
+      - Employees
+      operationId: updateEmployeeByGlId
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/integration_maps/financial_transaction_type/{global_id}:
+    get:
+      summary: Get Financial Transaction Type
+      tags:
+      - Financial Transaction Types
+      operationId: getFinancialTransactionType2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Financial Transaction Type Copy 3
+      tags:
+      - Financial Transaction Types
+      operationId: updateFinancialTransactionTypeCopy3
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/integration_maps/financial_transaction/{global_id}:
+    get:
+      summary: Get Financial Transactions
+      tags:
+      - Financial Transactions
+      operationId: getFinancialTransactions
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Financial Transaction Copy
+      tags:
+      - Financial Transactions
+      operationId: editFinancialTransactionCopy
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/integration_maps/loan_type/{global_id}:
+    get:
+      summary: Get Loan Type
+      tags:
+      - Loan Types
+      operationId: getLoanType2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch}/integration_maps/loan_type/{global_id}:
+    patch:
+      summary: Edit Loan Type
+      tags:
+      - Loan Types
+      operationId: editLoanType2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/integration_maps/loan/{global_id}:
+    get:
+      summary: Get Loan
+      tags:
+      - Loans
+      operationId: getLoan3
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Loan
+      tags:
+      - Loans
+      operationId: editLoan3
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/integration_maps/overtime_type/{global_id}:
+    get:
+      summary: Get Overtime Type
+      tags:
+      - Overtime Types
+      operationId: getOvertimeType2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Overtime Type
+      tags:
+      - Overtime Types
+      operationId: editOvertimeType2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/integration_maps/overtime/{global_id}:
+    get:
+      summary: Get Overtime
+      tags:
+      - Overtimes
+      operationId: getOvertime3
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Overtime
+      tags:
+      - Overtimes
+      operationId: editOvertime3
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: global_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/miscellaneous_requests:
+    get:
+      summary: List Employees Miscellaneous Requests
+      tags:
+      - Miscellaneous Requests
+      operationId: listEmployeesMiscellaneousRequests2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/miscellaneous_requests/{miscellaneous_request_id}:
+    get:
+      summary: Show Employees Miscellaneous Request
+      tags:
+      - Miscellaneous Requests
+      operationId: showEmployeesMiscellaneousRequest
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: miscellaneous_request_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/miscellaneous_types:
+    get:
+      summary: List Miscellaneous Types
+      tags:
+      - Miscellaneous Types
+      operationId: listMiscellaneousTypes
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Miscellaneous Type
+      tags:
+      - Miscellaneous Types
+      operationId: createMiscellaneousType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/miscellaneous_types/{miscellaneous_type_id}:
+    get:
+      summary: Show Miscellaneous Type
+      tags:
+      - Miscellaneous Types
+      operationId: showMiscellaneousType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: miscellaneous_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Miscellaneous Type
+      tags:
+      - Miscellaneous Types
+      operationId: deleteMiscellaneousType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: miscellaneous_type_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/governmental_informations:
+    get:
+      summary: List Branch Governmental Information
+      tags:
+      - Governmental Information
+      operationId: listBranchGovernmentalInformation
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/governmental_informations/{governmental_information_id}:
+    get:
+      summary: Show Branch Governmental Information
+      tags:
+      - Governmental Information
+      operationId: showBranchGovernmentalInformation
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: governmental_information_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /countries:
+    get:
+      summary: List Countries
+      tags:
+      - Countries
+      operationId: listCountries
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /countries/{country_id}:
+    get:
+      summary: Show Country
+      tags:
+      - Countries
+      operationId: showCountry
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: country_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /banks/{bank_id}/bank_branches/{bank_branche_id}:
+    get:
+      summary: List Bank Branches
+      tags:
+      - Bank Branches
+      operationId: listBankBranches
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: bank_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: bank_branche_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /banks/{bank_id}/bank_branches/{bank_branch_id}:
+    get:
+      summary: Show Bank Branches
+      tags:
+      - Bank Branches
+      operationId: showBankBranches
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: bank_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: bank_branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /banks:
+    get:
+      summary: List Banks
+      tags:
+      - Banks
+      operationId: listBanks
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /banks/{bank_id}:
+    get:
+      summary: Show Bank
+      tags:
+      - Banks
+      operationId: showBank
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: bank_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/branch_bank_accounts:
+    get:
+      summary: List Bank Branch Accounts
+      tags:
+      - Bank Accounts
+      operationId: listBankBranchAccounts
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/request_events:
+    get:
+      summary: List Request Events
+      tags:
+      - Request Events
+      operationId: listRequestEvents
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/work_shifts:
+    get:
+      summary: List Branch Work Shift
+      tags:
+      - Work Shifts
+      operationId: listBranchWorkShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Branch Work Shift
+      tags:
+      - Work Shifts
+      operationId: createBranchWorkShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/work_shifts/{work_shift_id}:
+    get:
+      summary: Show  Branch Work Shift
+      tags:
+      - Work Shifts
+      operationId: showBranchWorkShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: work_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Branch Work Shift
+      tags:
+      - Work Shifts
+      operationId: updateBranchWorkShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: work_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Destroy Branch Work Shift
+      tags:
+      - Work Shifts
+      operationId: destroyBranchWorkShift
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: work_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employee_shifts:
+    get:
+      summary: List Branch Employee Shifts
+      tags:
+      - Branch Employee Shifts
+      operationId: listBranchEmployeeShifts
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employee_shifts/{work_shift_id}:
+    get:
+      summary: Show Branch Employee Shifts
+      tags:
+      - Branch Employee Shifts
+      operationId: showBranchEmployeeShifts
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: work_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/employee_shifts/{employee_shift_id}:
+    post:
+      summary: Create Employee Shift
+      tags:
+      - Branch Employee Shifts
+      operationId: createEmployeeShift2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Employee Shift
+      tags:
+      - Branch Employee Shifts
+      operationId: updateEmployeeShift2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Employee Shift
+      tags:
+      - Branch Employee Shifts
+      operationId: deleteEmployeeShift2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: employee_shift_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/attendance_details:
+    post:
+      summary: Create Attendance Details
+      tags:
+      - Attendance Details
+      operationId: createAttendanceDetails
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      servers:
+      - url: https://aiapi.zenhr.com/api/v3
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/attendance_details/bulk_insert:
+    post:
+      summary: Bulk Insert Attendance Details
+      tags:
+      - Attendance Details
+      operationId: bulkInsertAttendanceDetails
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      servers:
+      - url: https://aiapi.zenhr.com/api/v3
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/attendance_records:
+    get:
+      summary: List Attendance Records
+      tags:
+      - Attendance Details
+      operationId: listAttendanceRecords
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/attendance_records/{attendance_record_id}:
+    get:
+      summary: Get Attendance Record
+      tags:
+      - Attendance Details
+      operationId: getAttendanceRecord
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: attendance_record_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/termination_setups:
+    get:
+      summary: List Branch Termination Setups
+      tags:
+      - Termination Setup
+      operationId: listBranchTerminationSetups
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/termination_setups/{termination_setup_id}:
+    get:
+      summary: Show Branch Termination Setup
+      tags:
+      - Termination Setup
+      operationId: showBranchTerminationSetup
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: termination_setup_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Branch Termination Setup
+      tags:
+      - Termination Setup
+      operationId: createBranchTerminationSetup
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: termination_setup_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/terminations:
+    get:
+      summary: List Branch Terminations
+      tags:
+      - Terminations
+      operationId: listBranchTerminations
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Termination
+      tags:
+      - Terminations
+      operationId: createTermination2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/terminations/{termination_id}:
+    get:
+      summary: Show Branch Termination
+      tags:
+      - Terminations
+      operationId: showBranchTermination
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: termination_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Termination
+      tags:
+      - Terminations
+      operationId: deleteTermination2
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: termination_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_trips:
+    get:
+      summary: 1. View All Business Trips
+      tags:
+      - Business Trips
+      operationId: 1ViewAllBusinessTrips
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: 3. Create Business Trip
+      tags:
+      - Business Trips
+      operationId: 3CreateBusinessTrip
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              business_trip:
+                category: international
+                employee_id: 1159
+                departure_city_id: 152
+                arrival_city_id: 472
+                start_date: '2025-06-17'
+                end_date: '2025-06-18'
+                with_accommodation: true
+                notes: Szia
+                extra_expenses_attributes:
+                - _destroy: false
+                  amount: 1200
+                  amount_currency: SAR
+                  financial_transaction_type_id: 1748
+                - _destroy: false
+                  amount: 24000
+                  amount_currency: SAR
+                  financial_transaction_type_id: 1748
+                - _destroy: false
+                  amount: 4800000
+                  amount_currency: SAR
+                  financial_transaction_type_id: 1748
+  /branches/{branch_id}/business_trips/{business_trip_id}:
+    get:
+      summary: 2. View Business Trip
+      tags:
+      - Business Trips
+      operationId: 2ViewBusinessTrip
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_trip_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: 4. Update Business Trip
+      tags:
+      - Business Trips
+      operationId: 4UpdateBusinessTrip
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_trip_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: 5. Delete Business Trip
+      tags:
+      - Business Trips
+      operationId: 5DeleteBusinessTrip
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_trip_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_trips/travel_types:
+    get:
+      summary: 6. View Available Travel Types
+      tags:
+      - Business Trips
+      operationId: 6ViewAvailableTravelTypes
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_trips/destinations_cities:
+    get:
+      summary: 7. View Available Destination Cities
+      tags:
+      - Business Trips
+      operationId: 7ViewAvailableDestinationCities
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_trips/all_available_arrivals:
+    get:
+      summary: 8. View Available Arrival Cities
+      tags:
+      - Business Trips
+      operationId: 8ViewAvailableArrivalCities
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_trips/destinations_data:
+    get:
+      summary: 9. View Available Destinations
+      tags:
+      - Business Trips
+      operationId: 9ViewAvailableDestinations
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/business_travel_setup:
+    get:
+      summary: 1. Get Business Tavel Setup
+      tags:
+      - Business Travel Setup
+      operationId: 1GetBusinessTavelSetup
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: 2. Update Business Travel Setup
+      tags:
+      - Business Travel Setup
+      operationId: 2UpdateBusinessTravelSetup
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              perdiems_financial_transaction_type_id: 30054
+              airticket_financial_transaction_type_id: 49940
+              accommodation_financial_transaction_type_id: 49940
+              payroll_status: out_of_payroll
+              employee_reminder_days_before: 1
+              expenses_financial_transaction_types:
+              - 1748
+  /branches/{branch_id}/business_travel_policies:
+    get:
+      summary: 1. View All Business Travel Policies
+      tags:
+      - Business Travel Policies
+      operationId: 1ViewAllBusinessTravelPolicies
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: 4. Create Business Travel Policy
+      tags:
+      - Business Travel Policies
+      operationId: 4CreateBusinessTravelPolicy
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              business_travel_policy:
+                name:
+                  ar: 3 قيس
+                  en: Qais 3
+                position_ids:
+                - '166606'
+                business_travel_destinations_attributes:
+                  '0':
+                    _destroy: false
+                    category: domestic
+                    country: 4
+                    per_diem: '12.23'
+                    per_diem_currency: SAR
+                    departure_country: []
+                    departure_city:
+                    - ''
+                    - 82
+                    arrival_country: []
+                    arrival_city:
+                    - ''
+                    - 82
+                    business_travel_accommodation_attributes:
+                      hotel_tier:
+                        '1': false
+                        '2': false
+                        '3': false
+                        '4': true
+                        '5': true
+                      period_type: night
+                      max_accommodation_cost: '1220.00'
+                      max_accommodation_cost_currency: SAR
+                    business_travel_transportation_attributes:
+                      airticket_class:
+                        '0': false
+                        '1': false
+                        '2': false
+                      travel_type:
+                        '0': true
+                        '1': true
+                        '2': true
+                        '3': true
+                      max_airticket_cost: '1200.00'
+                      max_airticket_cost_currency: SAR
+                      max_travel_cost: '1200.00'
+                      max_travel_cost_currency: SAR
+                      transportation_payments_attributes:
+                      - _destroy: false
+                        financial_transaction_amount: '12.00'
+                        financial_transaction_amount_currency: SAR
+                        financial_transaction_type_id: 9139
+                        travel_type: 0
+                      - _destroy: false
+                        financial_transaction_amount: '12.00'
+                        financial_transaction_amount_currency: SAR
+                        financial_transaction_type_id: 12116
+                        travel_type: 1
+                      - _destroy: false
+                        financial_transaction_amount: '230.00'
+                        financial_transaction_amount_currency: SAR
+                        financial_transaction_type_id: 9139
+                        travel_type: 2
+                      - _destroy: false
+                        financial_transaction_amount: '200.00'
+                        financial_transaction_amount_currency: SAR
+                        financial_transaction_type_id: 29795
+                        travel_type: 3
+                  '1':
+                    _destroy: false
+                    category: international
+                    per_diem: '1200.00'
+                    per_diem_currency: SAR
+                    departure_country:
+                    - 7
+                    departure_city: []
+                    arrival_country:
+                    - 35
+                    arrival_city: []
+                    business_travel_accommodation_attributes:
+                      hotel_tier:
+                        '1': false
+                        '2': true
+                        '3': false
+                        '4': true
+                        '5': false
+                      period_type: night
+                      max_accommodation_cost: '1200.00'
+                      max_accommodation_cost_currency: SAR
+                    business_travel_transportation_attributes:
+                      airticket_class:
+                        '0': false
+                        '1': true
+                        '2': true
+                      travel_type:
+                        '0': false
+                        '1': false
+                        '2': false
+                        '3': false
+                      max_airticket_cost: '12300.00'
+                      max_airticket_cost_currency: SAR
+                      max_travel_cost: ''
+                      max_travel_cost_currency: SAR
+  /branches/{branch_id}/business_travel_policies/{business_travel_policy_id}:
+    get:
+      summary: 2. View Business Travel Policy
+      tags:
+      - Business Travel Policies
+      operationId: 2ViewBusinessTravelPolicy
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_travel_policy_id
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: 3. Update Business Travel Policy
+      tags:
+      - Business Travel Policies
+      operationId: 3UpdateBusinessTravelPolicy
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_travel_policy_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              business_travel_policy:
+                name:
+                  ar: بي تي
+                  en: bt
+                position_ids:
+                - '811'
+                - '42569'
+                - '58816'
+                - '58806'
+                business_travel_destinations_attributes:
+                  '0':
+                    _destroy: false
+                    id: 1
+                    category: international
+                    per_diem: '22.00'
+                    per_diem_currency: SAR
+                    departure_country:
+                    - 7
+                    departure_city:
+                    - ''
+                    arrival_country:
+                    - 28
+                    arrival_city:
+                    - ''
+                    business_travel_accommodation_attributes:
+                      id: 1
+                      hotel_tier:
+                        '1': false
+                        '2': false
+                        '3': false
+                        '4': false
+                        '5': false
+                      period_type: night
+                      max_accommodation_cost: ''
+                      max_accommodation_cost_currency: SAR
+                    business_travel_transportation_attributes:
+                      id: 1
+                      airticket_class:
+                        '0': false
+                        '1': false
+                        '2': false
+                      travel_type:
+                        '0': false
+                        '1': false
+                        '2': false
+                        '3': false
+                      max_airticket_cost: ''
+                      max_airticket_cost_currency: SAR
+                      max_travel_cost: ''
+                      max_travel_cost_currency: SAR
+                  '1':
+                    _destroy: false
+                    id: 2
+                    category: domestic
+                    country: 1
+                    per_diem: '11.00'
+                    per_diem_currency: SAR
+                    departure_country: []
+                    departure_city:
+                    - ''
+                    - 1
+                    arrival_country: []
+                    arrival_city:
+                    - ''
+                    - 4
+                    business_travel_accommodation_attributes:
+                      id: 2
+                      hotel_tier:
+                        '1': false
+                        '2': false
+                        '3': false
+                        '4': false
+                        '5': false
+                      period_type: night
+                      max_accommodation_cost: ''
+                      max_accommodation_cost_currency: SAR
+                    business_travel_transportation_attributes:
+                      id: 2
+                      airticket_class:
+                        '0': false
+                        '1': false
+                        '2': false
+                      travel_type:
+                        '0': true
+                        '1': false
+                        '2': true
+                        '3': false
+                      max_airticket_cost: ''
+                      max_airticket_cost_currency: SAR
+                      max_travel_cost: ''
+                      max_travel_cost_currency: SAR
+                  '2':
+                    _destroy: false
+                    id: 516
+                    category: international
+                    per_diem: '4.00'
+                    per_diem_currency: SAR
+                    departure_country:
+                    - 23
+                    departure_city:
+                    - ''
+                    arrival_country:
+                    - 23
+                    arrival_city:
+                    - ''
+                    business_travel_accommodation_attributes:
+                      id: 516
+                      hotel_tier:
+                        '1': false
+                        '2': false
+                        '3': true
+                        '4': false
+                        '5': true
+                      period_type: night
+                      max_accommodation_cost: ''
+                      max_accommodation_cost_currency: SAR
+                    business_travel_transportation_attributes:
+                      id: 516
+                      airticket_class:
+                        '0': true
+                        '1': false
+                        '2': false
+                      travel_type:
+                        '0': false
+                        '1': false
+                        '2': false
+                        '3': false
+                      max_airticket_cost: ''
+                      max_airticket_cost_currency: SAR
+                      max_travel_cost: ''
+                      max_travel_cost_currency: SAR
+                  '3':
+                    _destroy: false
+                    id: 622
+                    category: domestic
+                    country: 4
+                    per_diem: '699.00'
+                    per_diem_currency: SAR
+                    departure_country: []
+                    departure_city:
+                    - ''
+                    - 82
+                    arrival_country: []
+                    arrival_city:
+                    - ''
+                    - 82
+                    business_travel_accommodation_attributes:
+                      id: 622
+                      hotel_tier:
+                        '1': false
+                        '2': false
+                        '3': false
+                        '4': false
+                        '5': false
+                      period_type: night
+                      max_accommodation_cost: ''
+                      max_accommodation_cost_currency: SAR
+                    business_travel_transportation_attributes:
+                      id: 622
+                      airticket_class:
+                        '0': false
+                        '1': false
+                        '2': false
+                      travel_type:
+                        '0': false
+                        '1': false
+                        '2': false
+                        '3': false
+                      max_airticket_cost: ''
+                      max_airticket_cost_currency: SAR
+                      max_travel_cost: ''
+                      max_travel_cost_currency: SAR
+    delete:
+      summary: 5. Delete Business Travel Policy
+      tags:
+      - Business Travel Policies
+      operationId: 5DeleteBusinessTravelPolicy
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: business_travel_policy_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/document_types:
+    get:
+      summary: List Document Types for a branch
+      tags:
+      - Document Types
+      operationId: listDocumentTypesForABranch
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Document Type
+      tags:
+      - Document Types
+      operationId: createDocumentType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name:
+                en: Type 1
+                ar: ar Type 1
+              owner_type: string
+              active: true
+              branch_ids:
+              - 1
+  /branches/{branch_id}/document_types/{id}:
+    get:
+      summary: Get Document Type
+      tags:
+      - Document Types
+      operationId: getDocumentType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Document Type
+      tags:
+      - Document Types
+      operationId: updateDocumentType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name:
+                en: Type 2
+                ar: ar Type 2
+              owner_type: string
+              active: true
+    delete:
+      summary: Delete Document Type
+      tags:
+      - Document Types
+      operationId: deleteDocumentType
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /branches/{branch_id}/documents:
+    get:
+      summary: List Documents for a branch
+      tags:
+      - Documents
+      operationId: listDocumentsForABranch
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create Document
+      tags:
+      - Documents
+      operationId: createDocument
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: string
+              document_type_id: 1
+              owner_type: string
+              owner_id: 1
+              admin_only: false
+              expiry_date: string
+              attachments_attributes:
+              - attachment: string
+  /branches/{branch_id}/documents/{document_id}:
+    get:
+      summary: Get Document
+      tags:
+      - Documents
+      operationId: getDocument
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: document_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Edit Document
+      tags:
+      - Documents
+      operationId: editDocument
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: document_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: string
+              document_type_id: 1
+              owner_type: string
+              owner_id: 1
+              admin_only: false
+              expiry_date: string
+              attachments_attributes:
+              - attachment: string
+    delete:
+      summary: Delete Document
+      tags:
+      - Documents
+      operationId: deleteDocument
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+      parameters:
+      - name: branch_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: document_id
+        in: path
+        required: true
+        schema:
+          type: string

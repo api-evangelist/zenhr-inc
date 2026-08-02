@@ -1,0 +1,18 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: searched
+source: https://api-docs.zenhr.com/ + https://zenhr.statuspage.io
+versioning:
+  scheme: uri-path
+  current: v3
+  base_path: /api/v3
+  docs: https://api-docs.zenhr.com/
+rate_limits:
+  production: 15 requests / 4 seconds
+  sandbox: 10 requests / 5 seconds
+status_page: https://zenhr.statuspage.io
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation/Sunset-header policy documented.
+deprecated_operations: []

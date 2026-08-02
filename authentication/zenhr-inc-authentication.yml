@@ -1,0 +1,29 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: searched
+source: openapi/zenhr-inc-openapi.yml
+docs: https://api-docs.zenhr.com/
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  token_placement: 'Authorization: Bearer'
+  pkce: S256
+  public_client: true
+notes: 'OAuth 2.0 Authorization Code with PKCE (S256). Tokens presented as Authorization: Bearer. Integration apps are registered
+  by a Global Super Admin at /en/oauth/applications, granted per-scope authorities and a company data-access level. token_endpoint_auth_methods=none
+  (public client) per the published authorization-server metadata.'
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.zenhr.com/en/oauth/authorize
+    tokenUrl: https://api.zenhr.com/en/oauth/token
+    registrationUrl: https://api.zenhr.com/oauth/register
+    scopes: 9
+    pkce: S256
+  sources:
+  - openapi/zenhr-inc-openapi.yml
+  - https://api.zenhr.com/.well-known/oauth-authorization-server

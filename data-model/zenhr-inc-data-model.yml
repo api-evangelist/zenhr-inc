@@ -1,0 +1,96 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: derived
+source: openapi/zenhr-inc-openapi.yml
+notes: Entity graph derived from the nesting of resource paths in the OpenAPI. Ownership inferred from path hierarchy (parent
+  {id} segments).
+entities:
+- name: company
+  relationships:
+  - type: has_many
+    target: branch
+- name: branch
+  relationships:
+  - type: has_many
+    target: employee
+    via: branch_id
+  - type: has_many
+    target: department
+    via: branch_id
+  - type: has_many
+    target: section
+    via: branch_id
+  - type: has_many
+    target: position
+    via: branch_id
+  - type: has_many
+    target: business_unit
+    via: branch_id
+  - type: has_many
+    target: work_shift
+    via: branch_id
+  - type: has_many
+    target: financial_transaction
+    via: branch_id
+  - type: has_many
+    target: timeoff
+    via: branch_id
+- name: employee
+  relationships:
+  - type: belongs_to
+    target: branch
+    via: branch_id
+  - type: has_many
+    target: professional_data
+    via: employee_id
+  - type: has_many
+    target: financial_data
+    via: employee_id
+  - type: has_many
+    target: salary
+    via: employee_id
+  - type: has_many
+    target: financial_transaction
+    via: employee_id
+  - type: has_many
+    target: timeoff_transaction
+    via: employee_id
+  - type: has_many
+    target: loan
+    via: employee_id
+  - type: has_many
+    target: overtime
+    via: employee_id
+  - type: has_many
+    target: employee_competency
+    via: employee_id
+  - type: has_many
+    target: family
+    via: employee_id
+  - type: has_many
+    target: employee_shift
+    via: employee_id
+  - type: has_one
+    target: termination
+    via: employee_id
+- name: financial_data
+  relationships:
+  - type: belongs_to
+    target: employee
+    via: employee_id
+  - type: has_many
+    target: recurring_transaction
+    via: financial_datum_id
+- name: competencies_category
+  relationships:
+  - type: has_many
+    target: competency
+    via: competencies_category_id
+  - type: has_many
+    target: level_scale
+    via: competencies_category_id
+- name: bank
+  relationships:
+  - type: has_many
+    target: bank_branch
+    via: bank_id

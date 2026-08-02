@@ -1,0 +1,26 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: searched
+source: openapi/zenhr-inc-openapi.yml + https://www.zenhr.com/en/security-and-privacy
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OAuth 2.0 authorization_code securityScheme; published RFC 8414 authorization-server metadata
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with issuer/endpoints/scopes
+- id: rfc7636-pkce
+  conforms: true
+  evidence: 'code_challenge_methods_supported: [S256]'
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: /.well-known/security.txt present with Contact
+- id: soc2-type-ii
+  conforms: true
+  evidence: SOC 2 Type II attestation published on security-and-privacy page and Vanta trust center
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors returned as standard JSON with HTTP status codes, not application/problem+json
+- id: openid-connect
+  conforms: false
+  evidence: no /.well-known/openid-configuration; OAuth2 only

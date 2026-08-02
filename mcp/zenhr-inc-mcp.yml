@@ -1,0 +1,29 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/zenhr-inc-openapi.yml
+notes: No official hosted/remote ZenHR MCP server was found. Candidate tool surface derived from OpenAPI operations; each
+  tool maps to one operationId.
+server:
+  name: zenhr
+  transport: http
+tools:
+- name: list_branches
+  description: List branches
+  source_operation: openapi/zenhr-inc-openapi.yml#listBranches
+- name: list_employees
+  description: List employees in a branch
+  source_operation: openapi/zenhr-inc-openapi.yml#listEmployees
+- name: get_employee
+  description: Get an employee
+  source_operation: openapi/zenhr-inc-openapi.yml#getEmployee
+- name: create_timeoff_request
+  description: Create a time-off transaction request
+  source_operation: openapi/zenhr-inc-openapi.yml#createTimeoffTransactionRequest
+- name: list_branch_salaries
+  description: List employee salaries for a branch
+  source_operation: openapi/zenhr-inc-openapi.yml#listBranchSalaries
+- name: who_am_i
+  description: Identify the authenticated principal
+  source_operation: openapi/zenhr-inc-openapi.yml#whoAmI

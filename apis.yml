@@ -1,8 +1,28 @@
 aid: zenhr-inc
 name: ZenHR Inc
-description: ZenHR Inc is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  ZenHR is an AI-powered HR and payroll management platform (HRMS) serving businesses across the MENA
+  region, with localization for Saudi Arabia, UAE, Egypt, Iraq, Jordan, and Kuwait (GOSI, WPS, social
+  security, and local tax/labor laws). It provides automated payroll, attendance, employee self-service,
+  performance management, and recruitment. ZenHR exposes a REST API (v3) that lets external applications
+  integrate with branches, employees, master/professional/financial data, salaries, financial
+  transactions, loans, overtime, time off, attendance, competencies, HR letters, terminations, business
+  travel, and documents. The API responds in JSON, uses OAuth 2.0 (authorization code + PKCE), and is
+  documented as a published Postman collection.
 url: https://raw.githubusercontent.com/api-evangelist/zenhr-inc/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://content.pstmn.io/b1a76fa7-5d05-4725-b15e-0c4e97606ed9/WmVuSFIgTG9nbyAoNSkucG5n
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,15 +31,794 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Human Resources
+- HR
+- Payroll
+- HRMS
+- Employee Management
+- MENA
+- Attendance
+- Time Off
+- SaaS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: zenhr-inc:zenhr-inc-approvals-api
+  name: ZenHR Inc Approvals API
+  description: The Approvals API from ZenHR Inc — 2 operation(s) for approvals.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Approvals
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-approvals-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-attendance-details-api
+  name: ZenHR Inc Attendance Details API
+  description: The Attendance Details API from ZenHR Inc — 4 operation(s) for attendance details.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Attendance Details
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-attendance-details-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-bank-account-api
+  name: ZenHR Inc Bank Account API
+  description: The Bank Account API from ZenHR Inc — 1 operation(s) for bank account.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Bank Account
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-bank-account-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-bank-accounts-api
+  name: ZenHR Inc Bank Accounts API
+  description: The Bank Accounts API from ZenHR Inc — 1 operation(s) for bank accounts.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Bank Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-bank-accounts-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-bank-branches-api
+  name: ZenHR Inc Bank Branches API
+  description: The Bank Branches API from ZenHR Inc — 2 operation(s) for bank branches.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Bank Branches
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-bank-branches-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-banks-api
+  name: ZenHR Inc Banks API
+  description: The Banks API from ZenHR Inc — 2 operation(s) for banks.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Banks
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-banks-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-branch-employee-shifts-api
+  name: ZenHR Inc Branch Employee Shifts API
+  description: >-
+    The Branch Employee Shifts API from ZenHR Inc — 3 operation(s) for branch employee shifts.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Branch Employee Shifts
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-branch-employee-shifts-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-branches-api
+  name: ZenHR Inc Branches API
+  description: The Branches API from ZenHR Inc — 3 operation(s) for branches.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Branches
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-branches-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-business-travel-policies-api
+  name: ZenHR Inc Business Travel Policies API
+  description: >-
+    The Business Travel Policies API from ZenHR Inc — 2 operation(s) for business travel policies.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Business Travel Policies
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-business-travel-policies-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-business-travel-setup-api
+  name: ZenHR Inc Business Travel Setup API
+  description: The Business Travel Setup API from ZenHR Inc — 1 operation(s) for business travel setup.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Business Travel Setup
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-business-travel-setup-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-business-trips-api
+  name: ZenHR Inc Business Trips API
+  description: The Business Trips API from ZenHR Inc — 6 operation(s) for business trips.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Business Trips
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-business-trips-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-business-units-api
+  name: ZenHR Inc Business Units API
+  description: The Business Units API from ZenHR Inc — 2 operation(s) for business units.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Business Units
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-business-units-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-competencies-api
+  name: ZenHR Inc Competencies API
+  description: The Competencies API from ZenHR Inc — 3 operation(s) for competencies.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Competencies
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-competencies-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-competencies-categories-api
+  name: ZenHR Inc Competencies Categories API
+  description: >-
+    The Competencies Categories API from ZenHR Inc — 2 operation(s) for competencies categories.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Competencies Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-competencies-categories-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-countries-api
+  name: ZenHR Inc Countries API
+  description: The Countries API from ZenHR Inc — 2 operation(s) for countries.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Countries
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-countries-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-departments-api
+  name: ZenHR Inc Departments API
+  description: The Departments API from ZenHR Inc — 2 operation(s) for departments.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Departments
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-departments-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-divisions-api
+  name: ZenHR Inc Divisions API
+  description: The Divisions API from ZenHR Inc — 2 operation(s) for divisions.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Divisions
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-divisions-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-document-types-api
+  name: ZenHR Inc Document Types API
+  description: The Document Types API from ZenHR Inc — 2 operation(s) for document types.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Document Types
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-document-types-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-documents-api
+  name: ZenHR Inc Documents API
+  description: The Documents API from ZenHR Inc — 2 operation(s) for documents.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-documents-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employee-competencies-api
+  name: ZenHR Inc Employee Competencies API
+  description: The Employee Competencies API from ZenHR Inc — 2 operation(s) for employee competencies.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employee Competencies
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employee-competencies-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employee-financial-transactions-api
+  name: ZenHR Inc Employee Financial Transactions API
+  description: >-
+    The Employee Financial Transactions API from ZenHR Inc — 4 operation(s) for employee financial transactions.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employee Financial Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employee-financial-transactions-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employee-master-data-api
+  name: ZenHR Inc Employee Master Data API
+  description: The Employee Master Data API from ZenHR Inc — 2 operation(s) for employee master data.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employee Master Data
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employee-master-data-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employee-shifts-api
+  name: ZenHR Inc Employee Shifts API
+  description: The Employee Shifts API from ZenHR Inc — 2 operation(s) for employee shifts.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employee Shifts
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employee-shifts-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employee-timeoff-transaction-api
+  name: ZenHR Inc Employee Timeoff Transaction API
+  description: >-
+    The Employee Timeoff Transaction API from ZenHR Inc — 3 operation(s) for employee timeoff transaction.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employee Timeoff Transaction
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employee-timeoff-transaction-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employees-api
+  name: ZenHR Inc Employees API
+  description: The Employees API from ZenHR Inc — 1 operation(s) for employees.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employees
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employees-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employees-hr-letters-api
+  name: ZenHR Inc Employees HR Letters API
+  description: The Employees HR Letters API from ZenHR Inc — 2 operation(s) for employees hr letters.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employees HR Letters
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employees-hr-letters-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-employees-termination-api
+  name: ZenHR Inc Employees Termination API
+  description: The Employees Termination API from ZenHR Inc — 2 operation(s) for employees termination.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Employees Termination
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-employees-termination-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-families-api
+  name: ZenHR Inc Families API
+  description: The Families API from ZenHR Inc — 2 operation(s) for families.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Families
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-families-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-financial-data-api
+  name: ZenHR Inc Financial Data API
+  description: The Financial Data API from ZenHR Inc — 3 operation(s) for financial data.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Financial Data
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-financial-data-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-financial-transaction-types-api
+  name: ZenHR Inc Financial Transaction Types API
+  description: >-
+    The Financial Transaction Types API from ZenHR Inc — 3 operation(s) for financial transaction types.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Financial Transaction Types
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-financial-transaction-types-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-financial-transactions-api
+  name: ZenHR Inc Financial Transactions API
+  description: >-
+    The Financial Transactions API from ZenHR Inc — 3 operation(s) for financial transactions.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Financial Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-financial-transactions-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-general-api
+  name: ZenHR Inc General API
+  description: The General API from ZenHR Inc — 2 operation(s) for general.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - General
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-general-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-governmental-information-api
+  name: ZenHR Inc Governmental Information API
+  description: >-
+    The Governmental Information API from ZenHR Inc — 2 operation(s) for governmental information.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Governmental Information
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-governmental-information-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-hirearchy-groups-api
+  name: ZenHR Inc Hirearchy Groups API
+  description: The Hirearchy Groups API from ZenHR Inc — 2 operation(s) for hirearchy groups.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Hirearchy Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-hirearchy-groups-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-hr-letter-templates-api
+  name: ZenHR Inc HR Letter Templates API
+  description: The HR Letter Templates API from ZenHR Inc — 2 operation(s) for hr letter templates.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - HR Letter Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-hr-letter-templates-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-hr-letter-types-api
+  name: ZenHR Inc HR Letter Types API
+  description: The HR Letter Types API from ZenHR Inc — 2 operation(s) for hr letter types.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - HR Letter Types
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-hr-letter-types-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-level-scales-api
+  name: ZenHR Inc Level Scales API
+  description: The Level Scales API from ZenHR Inc — 3 operation(s) for level scales.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Level Scales
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-level-scales-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-loan-types-api
+  name: ZenHR Inc Loan Types API
+  description: The Loan Types API from ZenHR Inc — 3 operation(s) for loan types.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Loan Types
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-loan-types-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-loans-api
+  name: ZenHR Inc Loans API
+  description: The Loans API from ZenHR Inc — 6 operation(s) for loans.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Loans
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-loans-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-main-projects-api
+  name: ZenHR Inc Main Projects API
+  description: The Main Projects API from ZenHR Inc — 2 operation(s) for main projects.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Main Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-main-projects-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-miscellaneous-requests-api
+  name: ZenHR Inc Miscellaneous Requests API
+  description: >-
+    The Miscellaneous Requests API from ZenHR Inc — 4 operation(s) for miscellaneous requests.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Miscellaneous Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-miscellaneous-requests-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-miscellaneous-types-api
+  name: ZenHR Inc Miscellaneous Types API
+  description: The Miscellaneous Types API from ZenHR Inc — 2 operation(s) for miscellaneous types.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Miscellaneous Types
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-miscellaneous-types-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-overtime-types-api
+  name: ZenHR Inc Overtime Types API
+  description: The Overtime Types API from ZenHR Inc — 3 operation(s) for overtime types.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Overtime Types
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-overtime-types-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-overtimes-api
+  name: ZenHR Inc Overtimes API
+  description: The Overtimes API from ZenHR Inc — 6 operation(s) for overtimes.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Overtimes
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-overtimes-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-positions-api
+  name: ZenHR Inc Positions API
+  description: The Positions API from ZenHR Inc — 2 operation(s) for positions.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Positions
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-positions-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-professional-data-api
+  name: ZenHR Inc Professional Data API
+  description: The Professional Data API from ZenHR Inc — 3 operation(s) for professional data.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Professional Data
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-professional-data-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-recurring-transaction-api
+  name: ZenHR Inc Recurring Transaction API
+  description: The Recurring Transaction API from ZenHR Inc — 2 operation(s) for recurring transaction.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Recurring Transaction
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-recurring-transaction-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-request-events-api
+  name: ZenHR Inc Request Events API
+  description: The Request Events API from ZenHR Inc — 1 operation(s) for request events.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Request Events
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-request-events-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-salaries-api
+  name: ZenHR Inc Salaries API
+  description: The Salaries API from ZenHR Inc — 2 operation(s) for salaries.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Salaries
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-salaries-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-sections-api
+  name: ZenHR Inc Sections API
+  description: The Sections API from ZenHR Inc — 2 operation(s) for sections.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Sections
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-sections-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-segments-api
+  name: ZenHR Inc Segments API
+  description: The Segments API from ZenHR Inc — 2 operation(s) for segments.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Segments
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-segments-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-termination-setup-api
+  name: ZenHR Inc Termination Setup API
+  description: The Termination Setup API from ZenHR Inc — 2 operation(s) for termination setup.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Termination Setup
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-termination-setup-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-terminations-api
+  name: ZenHR Inc Terminations API
+  description: The Terminations API from ZenHR Inc — 2 operation(s) for terminations.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Terminations
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-terminations-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-timeoff-transaction-api
+  name: ZenHR Inc Timeoff Transaction API
+  description: The Timeoff Transaction API from ZenHR Inc — 3 operation(s) for timeoff transaction.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Timeoff Transaction
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-timeoff-transaction-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-timeoffs-api
+  name: ZenHR Inc Timeoffs API
+  description: The Timeoffs API from ZenHR Inc — 2 operation(s) for timeoffs.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Timeoffs
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-timeoffs-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-users-api
+  name: ZenHR Inc Users API
+  description: The Users API from ZenHR Inc — 1 operation(s) for users.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-users-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-work-location-api
+  name: ZenHR Inc Work Location API
+  description: The Work Location API from ZenHR Inc — 2 operation(s) for work location.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Work Location
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-work-location-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-work-shifts-api
+  name: ZenHR Inc Work Shifts API
+  description: The Work Shifts API from ZenHR Inc — 2 operation(s) for work shifts.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Work Shifts
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-work-shifts-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
 common:
 - type: Website
   url: https://zenhr.com
+- type: DeveloperPortal
+  url: https://api-docs.zenhr.com/
+- type: Documentation
+  url: https://api-docs.zenhr.com/
+- type: APIReference
+  url: https://api-docs.zenhr.com/
+- type: Postman
+  url: https://api-docs.zenhr.com/
+- type: Blog
+  url: https://blog.zenhr.com/
+- type: Support
+  url: https://zenhrsolutions.freshdesk.com/en/support/home
+- type: StatusPage
+  url: https://zenhr.statuspage.io
+- type: Login
+  url: https://app.zenhr.com/en/users/sign_in
+- type: TermsOfService
+  url: https://www.zenhr.com/en/terms
+- type: PrivacyPolicy
+  url: https://www.zenhr.com/en/privacy-policy
+- type: Integrations
+  url: https://www.zenhr.com/en/marketplace-integration
+- type: OpenAPI
+  url: openapi/zenhr-inc-openapi.yml
+- type: Authentication
+  url: authentication/zenhr-inc-authentication.yml
+- type: OAuthScopes
+  url: scopes/zenhr-inc-scopes.yml
+- type: WellKnown
+  url: well-known/zenhr-inc-well-known.yml
+- type: SecurityTxt
+  url: well-known/zenhr-inc-security.txt
+- type: LLMsTxt
+  url: llms/zenhr-inc-llms.txt
+- type: MCPServer
+  url: mcp/zenhr-inc-mcp.yml
+- type: Conventions
+  url: conventions/zenhr-inc-conventions.yml
+- type: Lifecycle
+  url: lifecycle/zenhr-inc-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/zenhr-inc-problem-types.yml
+- type: Conformance
+  url: conformance/zenhr-inc-conformance.yml
+- type: Compliance
+  url: https://www.zenhr.com/en/security-and-privacy
+- type: DataModel
+  url: data-model/zenhr-inc-data-model.yml
+- type: DomainSecurity
+  url: security/zenhr-inc-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/zenhr-inc-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.zenhr.com/en/security-and-privacy
+- type: TrustCenter
+  url: https://trust.zenhr.com/
+- type: Sandbox
+  url: sandbox/zenhr-inc-sandbox.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 22
+  pass: local-v1

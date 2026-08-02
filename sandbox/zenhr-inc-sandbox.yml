@@ -1,0 +1,16 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: searched
+source: https://api-docs.zenhr.com/
+model: Separate ZenHR instance / base URL per company (e.g. app.zenhr.com production, sa.zenhr.com sandbox). Base URL is configured
+  as the `Baseurl` collection variable. No shared magic test values are published; test against your own sandbox instance
+  and OAuth app.
+test_vs_live:
+  production:
+    base_url: https://app.zenhr.com
+    rate_limit: 15 requests / 4 seconds
+  sandbox:
+    base_url: https://sa.zenhr.com
+    rate_limit: 10 requests / 5 seconds
+app_registration: Register an OAuth integration app at /en/oauth/applications; for Postman testing use redirect URL https://oauth.pstmn.io/v1/callback.
+magic_values: null

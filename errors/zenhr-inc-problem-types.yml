@@ -1,0 +1,28 @@
+# API Evangelist enrichment artifact
+generated: '2026-07-21'
+method: derived
+source: openapi/zenhr-inc-openapi.yml + https://api-docs.zenhr.com/
+format: http-status-json
+envelope: JSON body with standard HTTP status codes (the API responds in JSON and follows standard HTTP response codes).
+problems:
+- status: 400
+  title: Bad Request
+  remediation: Validate request parameters and JSON body.
+- status: 401
+  title: Unauthorized
+  remediation: Provide a valid OAuth 2.0 Bearer access token with the required scope.
+- status: 403
+  title: Forbidden
+  remediation: The app lacks the scope or the company/branch data-access level for this resource.
+- status: 404
+  title: Not Found
+  remediation: Verify the branch_id / employee_id and resource identifiers in the path.
+- status: 422
+  title: Unprocessable Entity
+  remediation: Fix validation errors reported in the response body.
+- status: 429
+  title: Too Many Requests
+  remediation: 'Respect rate limits: 15 requests / 4s (production), 10 requests / 5s (sandbox). Back off and retry.'
+- status: 500
+  title: Internal Server Error
+  remediation: Retry with backoff; contact devops@zenhr.com if persistent.
