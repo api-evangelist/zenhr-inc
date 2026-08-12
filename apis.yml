@@ -755,6 +755,8 @@ apis:
   - type: Postman
     url: openapi/zenhr-inc-postman-collection.json
 common:
+- type: Overlay
+  url: overlays/zenhr-inc-openapi-overlay.yaml
 - type: Website
   url: https://zenhr.com
 - type: DeveloperPortal
@@ -780,7 +782,7 @@ common:
 - type: Integrations
   url: https://www.zenhr.com/en/marketplace-integration
 - type: OpenAPI
-  url: openapi/zenhr-inc-openapi.yml
+  url: openapi/_original/zenhr-inc-openapi.yml
 - type: Authentication
   url: authentication/zenhr-inc-authentication.yml
 - type: OAuthScopes
