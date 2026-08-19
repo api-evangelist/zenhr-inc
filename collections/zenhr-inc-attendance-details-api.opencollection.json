@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Attendance Details API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attendance Details",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Attendance Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/attendance_details",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Attendance Details"
+        },
+        {
+          "info": {
+            "name": "Bulk Insert Attendance Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/attendance_details/bulk_insert",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bulk Insert Attendance Details"
+        },
+        {
+          "info": {
+            "name": "List Attendance Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/attendance_records",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Attendance Records"
+        },
+        {
+          "info": {
+            "name": "Get Attendance Record",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/attendance_records/:attendance_record_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "attendance_record_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Attendance Record"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

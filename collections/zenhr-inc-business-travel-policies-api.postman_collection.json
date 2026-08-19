@@ -1,0 +1,1142 @@
+{
+  "item": [
+    {
+      "id": "d456622f-30c2-4074-859e-6acfd5c3c5b6",
+      "name": "Business Travel Policies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "508963a4-ef4f-4f72-abd6-60522e902299",
+          "name": "1. View All Business Travel Policies",
+          "request": {
+            "name": "1. View All Business Travel Policies",
+            "description": {},
+            "url": {
+              "path": [
+                "branches",
+                ":branch_id",
+                "business_travel_policies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "branch_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a39210b-9877-4de4-9b91-238447cef9ca",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "28f3e337-b6d0-49e9-ae46-fa06d284a6be",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "67082040-a422-4763-9985-0c5b0275c7d1",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29492cd8-a1d1-45e3-9902-596fbf3cacb4",
+          "name": "4. Create Business Travel Policy",
+          "request": {
+            "name": "4. Create Business Travel Policy",
+            "description": {},
+            "url": {
+              "path": [
+                "branches",
+                ":branch_id",
+                "business_travel_policies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "branch_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc3fe7ba-90c9-4275-84e1-548190d1789e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_travel_policy\": {\n    \"name\": {\n      \"ar\": \"3 قيس\",\n      \"en\": \"Qais 3\"\n    },\n    \"position_ids\": [\n      \"166606\"\n    ],\n    \"business_travel_destinations_attributes\": {\n      \"0\": {\n        \"_destroy\": false,\n        \"category\": \"domestic\",\n        \"country\": 4,\n        \"per_diem\": \"12.23\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          82\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          82\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": true,\n            \"5\": true\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"1220.00\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": true,\n            \"1\": true,\n            \"2\": true,\n            \"3\": true\n          },\n          \"max_airticket_cost\": \"1200.00\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"1200.00\",\n          \"max_travel_cost_currency\": \"SAR\",\n          \"transportation_payments_attributes\": [\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"12.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 9139,\n              \"travel_type\": 0\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"12.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 12116,\n              \"travel_type\": 1\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"230.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 9139,\n              \"travel_type\": 2\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"200.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 29795,\n              \"travel_type\": 3\n            }\n          ]\n        }\n      },\n      \"1\": {\n        \"_destroy\": false,\n        \"category\": \"international\",\n        \"per_diem\": \"1200.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          7\n        ],\n        \"departure_city\": [],\n        \"arrival_country\": [\n          35\n        ],\n        \"arrival_city\": [],\n        \"business_travel_accommodation_attributes\": {\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": true,\n            \"3\": false,\n            \"4\": true,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"1200.00\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": true,\n            \"2\": true\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"12300.00\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b68b9e95-ddd8-404b-b681-b588c49c7b90",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_travel_policy\": {\n    \"name\": {\n      \"ar\": \"3 قيس\",\n      \"en\": \"Qais 3\"\n    },\n    \"position_ids\": [\n      \"166606\"\n    ],\n    \"business_travel_destinations_attributes\": {\n      \"0\": {\n        \"_destroy\": false,\n        \"category\": \"domestic\",\n        \"country\": 4,\n        \"per_diem\": \"12.23\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          82\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          82\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": true,\n            \"5\": true\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"1220.00\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": true,\n            \"1\": true,\n            \"2\": true,\n            \"3\": true\n          },\n          \"max_airticket_cost\": \"1200.00\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"1200.00\",\n          \"max_travel_cost_currency\": \"SAR\",\n          \"transportation_payments_attributes\": [\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"12.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 9139,\n              \"travel_type\": 0\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"12.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 12116,\n              \"travel_type\": 1\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"230.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 9139,\n              \"travel_type\": 2\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"200.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 29795,\n              \"travel_type\": 3\n            }\n          ]\n        }\n      },\n      \"1\": {\n        \"_destroy\": false,\n        \"category\": \"international\",\n        \"per_diem\": \"1200.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          7\n        ],\n        \"departure_city\": [],\n        \"arrival_country\": [\n          35\n        ],\n        \"arrival_city\": [],\n        \"business_travel_accommodation_attributes\": {\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": true,\n            \"3\": false,\n            \"4\": true,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"1200.00\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": true,\n            \"2\": true\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"12300.00\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "92174838-5f5f-443a-8ea8-4c0bc3a49625",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_travel_policy\": {\n    \"name\": {\n      \"ar\": \"3 قيس\",\n      \"en\": \"Qais 3\"\n    },\n    \"position_ids\": [\n      \"166606\"\n    ],\n    \"business_travel_destinations_attributes\": {\n      \"0\": {\n        \"_destroy\": false,\n        \"category\": \"domestic\",\n        \"country\": 4,\n        \"per_diem\": \"12.23\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          82\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          82\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": true,\n            \"5\": true\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"1220.00\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": true,\n            \"1\": true,\n            \"2\": true,\n            \"3\": true\n          },\n          \"max_airticket_cost\": \"1200.00\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"1200.00\",\n          \"max_travel_cost_currency\": \"SAR\",\n          \"transportation_payments_attributes\": [\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"12.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 9139,\n              \"travel_type\": 0\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"12.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 12116,\n              \"travel_type\": 1\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"230.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 9139,\n              \"travel_type\": 2\n            },\n            {\n              \"_destroy\": false,\n              \"financial_transaction_amount\": \"200.00\",\n              \"financial_transaction_amount_currency\": \"SAR\",\n              \"financial_transaction_type_id\": 29795,\n              \"travel_type\": 3\n            }\n          ]\n        }\n      },\n      \"1\": {\n        \"_destroy\": false,\n        \"category\": \"international\",\n        \"per_diem\": \"1200.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          7\n        ],\n        \"departure_city\": [],\n        \"arrival_country\": [\n          35\n        ],\n        \"arrival_city\": [],\n        \"business_travel_accommodation_attributes\": {\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": true,\n            \"3\": false,\n            \"4\": true,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"1200.00\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": true,\n            \"2\": true\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"12300.00\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84094403-2c61-4ce8-b8a0-33ce22dac318",
+          "name": "2. View Business Travel Policy",
+          "request": {
+            "name": "2. View Business Travel Policy",
+            "description": {},
+            "url": {
+              "path": [
+                "branches",
+                ":branch_id",
+                "business_travel_policies",
+                ":business_travel_policy_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "branch_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "business_travel_policy_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26e048a3-6efa-496a-a4bb-585dce6cf5d2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ffeba22-9897-4626-83e6-35a4934d4f84",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8c432fa8-270f-4747-95c8-a45339a790fd",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3950dfaa-3370-495c-9098-54f4d4e78dac",
+          "name": "3. Update Business Travel Policy",
+          "request": {
+            "name": "3. Update Business Travel Policy",
+            "description": {},
+            "url": {
+              "path": [
+                "branches",
+                ":branch_id",
+                "business_travel_policies",
+                ":business_travel_policy_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "branch_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "business_travel_policy_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8e7f8bda-a23f-45ae-b1b8-f638a77e3510",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_travel_policy\": {\n    \"name\": {\n      \"ar\": \"بي تي\",\n      \"en\": \"bt\"\n    },\n    \"position_ids\": [\n      \"811\",\n      \"42569\",\n      \"58816\",\n      \"58806\"\n    ],\n    \"business_travel_destinations_attributes\": {\n      \"0\": {\n        \"_destroy\": false,\n        \"id\": 1,\n        \"category\": \"international\",\n        \"per_diem\": \"22.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          7\n        ],\n        \"departure_city\": [\n          \"\"\n        ],\n        \"arrival_country\": [\n          28\n        ],\n        \"arrival_city\": [\n          \"\"\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 1,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 1,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"1\": {\n        \"_destroy\": false,\n        \"id\": 2,\n        \"category\": \"domestic\",\n        \"country\": 1,\n        \"per_diem\": \"11.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          1\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          4\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 2,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 2,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": true,\n            \"1\": false,\n            \"2\": true,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"2\": {\n        \"_destroy\": false,\n        \"id\": 516,\n        \"category\": \"international\",\n        \"per_diem\": \"4.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          23\n        ],\n        \"departure_city\": [\n          \"\"\n        ],\n        \"arrival_country\": [\n          23\n        ],\n        \"arrival_city\": [\n          \"\"\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 516,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": true,\n            \"4\": false,\n            \"5\": true\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 516,\n          \"airticket_class\": {\n            \"0\": true,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"3\": {\n        \"_destroy\": false,\n        \"id\": 622,\n        \"category\": \"domestic\",\n        \"country\": 4,\n        \"per_diem\": \"699.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          82\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          82\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 622,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 622,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b53e0f2-9135-4d25-8bc9-7889660628e4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_travel_policy\": {\n    \"name\": {\n      \"ar\": \"بي تي\",\n      \"en\": \"bt\"\n    },\n    \"position_ids\": [\n      \"811\",\n      \"42569\",\n      \"58816\",\n      \"58806\"\n    ],\n    \"business_travel_destinations_attributes\": {\n      \"0\": {\n        \"_destroy\": false,\n        \"id\": 1,\n        \"category\": \"international\",\n        \"per_diem\": \"22.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          7\n        ],\n        \"departure_city\": [\n          \"\"\n        ],\n        \"arrival_country\": [\n          28\n        ],\n        \"arrival_city\": [\n          \"\"\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 1,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 1,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"1\": {\n        \"_destroy\": false,\n        \"id\": 2,\n        \"category\": \"domestic\",\n        \"country\": 1,\n        \"per_diem\": \"11.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          1\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          4\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 2,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 2,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": true,\n            \"1\": false,\n            \"2\": true,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"2\": {\n        \"_destroy\": false,\n        \"id\": 516,\n        \"category\": \"international\",\n        \"per_diem\": \"4.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          23\n        ],\n        \"departure_city\": [\n          \"\"\n        ],\n        \"arrival_country\": [\n          23\n        ],\n        \"arrival_city\": [\n          \"\"\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 516,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": true,\n            \"4\": false,\n            \"5\": true\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 516,\n          \"airticket_class\": {\n            \"0\": true,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"3\": {\n        \"_destroy\": false,\n        \"id\": 622,\n        \"category\": \"domestic\",\n        \"country\": 4,\n        \"per_diem\": \"699.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          82\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          82\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 622,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 622,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "de717a6c-3078-4687-8ee8-4d2d9af774c5",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_travel_policy\": {\n    \"name\": {\n      \"ar\": \"بي تي\",\n      \"en\": \"bt\"\n    },\n    \"position_ids\": [\n      \"811\",\n      \"42569\",\n      \"58816\",\n      \"58806\"\n    ],\n    \"business_travel_destinations_attributes\": {\n      \"0\": {\n        \"_destroy\": false,\n        \"id\": 1,\n        \"category\": \"international\",\n        \"per_diem\": \"22.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          7\n        ],\n        \"departure_city\": [\n          \"\"\n        ],\n        \"arrival_country\": [\n          28\n        ],\n        \"arrival_city\": [\n          \"\"\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 1,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 1,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"1\": {\n        \"_destroy\": false,\n        \"id\": 2,\n        \"category\": \"domestic\",\n        \"country\": 1,\n        \"per_diem\": \"11.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          1\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          4\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 2,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 2,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": true,\n            \"1\": false,\n            \"2\": true,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"2\": {\n        \"_destroy\": false,\n        \"id\": 516,\n        \"category\": \"international\",\n        \"per_diem\": \"4.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [\n          23\n        ],\n        \"departure_city\": [\n          \"\"\n        ],\n        \"arrival_country\": [\n          23\n        ],\n        \"arrival_city\": [\n          \"\"\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 516,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": true,\n            \"4\": false,\n            \"5\": true\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 516,\n          \"airticket_class\": {\n            \"0\": true,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      },\n      \"3\": {\n        \"_destroy\": false,\n        \"id\": 622,\n        \"category\": \"domestic\",\n        \"country\": 4,\n        \"per_diem\": \"699.00\",\n        \"per_diem_currency\": \"SAR\",\n        \"departure_country\": [],\n        \"departure_city\": [\n          \"\",\n          82\n        ],\n        \"arrival_country\": [],\n        \"arrival_city\": [\n          \"\",\n          82\n        ],\n        \"business_travel_accommodation_attributes\": {\n          \"id\": 622,\n          \"hotel_tier\": {\n            \"1\": false,\n            \"2\": false,\n            \"3\": false,\n            \"4\": false,\n            \"5\": false\n          },\n          \"period_type\": \"night\",\n          \"max_accommodation_cost\": \"\",\n          \"max_accommodation_cost_currency\": \"SAR\"\n        },\n        \"business_travel_transportation_attributes\": {\n          \"id\": 622,\n          \"airticket_class\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false\n          },\n          \"travel_type\": {\n            \"0\": false,\n            \"1\": false,\n            \"2\": false,\n            \"3\": false\n          },\n          \"max_airticket_cost\": \"\",\n          \"max_airticket_cost_currency\": \"SAR\",\n          \"max_travel_cost\": \"\",\n          \"max_travel_cost_currency\": \"SAR\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37c35251-43ea-4aaa-a850-5a04d2564840",
+          "name": "5. Delete Business Travel Policy",
+          "request": {
+            "name": "5. Delete Business Travel Policy",
+            "description": {},
+            "url": {
+              "path": [
+                "branches",
+                ":branch_id",
+                "business_travel_policies",
+                ":business_travel_policy_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "branch_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "business_travel_policy_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28836da8-dba1-488b-8632-326218456375",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b7faca9-3c49-450c-88ee-5fb84c03c479",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8df3b2d2-ffab-4ab4-bd0e-7cf01a962108",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "business_travel_policies",
+                    ":business_travel_policy_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "business_travel_policy_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.zenhr.com/api/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read:branch read:employee accessed_employees_branches:employee read:professional_info read:termination read:employee_disciplinary_actions read:financial_transaction read:performance_evaluation read:timeoff_transaction"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.zenhr.com/en/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://api.zenhr.com/en/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "61d77bf3-b099-433b-b903-a3805c9d82fa",
+    "name": "ZenHR Approvals Business Travel Policies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the ZenHR HR & payroll platform. Integrate external applications with ZenHR to manage branches, employees, master/professional/financial data, payroll (salaries, financial transactions, loans, overtime), time off, attendance, competencies, HR letters, terminations, business travel, and documents. Responds in JSON with standard HTTP status codes; authenticated via OAuth 2.0 (authorization code + PKCE). Derived by API Evangelist from the provider's published Postman documentation collection.\n\nContact Support:\n Name: ZenHR DevOps\n Email: devops@zenhr.com",
+      "type": "text/plain"
+    }
+  }
+}

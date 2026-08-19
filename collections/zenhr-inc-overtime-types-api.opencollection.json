@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Overtime Types API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Overtime Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Overtime Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/overtime_types",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Overtime Types"
+        },
+        {
+          "info": {
+            "name": "Create Overtime Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/overtime_types",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Overtime Type"
+        },
+        {
+          "info": {
+            "name": "Get Overtime Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/overtime_types/:overtime_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "overtime_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Overtime Type"
+        },
+        {
+          "info": {
+            "name": "Edit Overtime Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/overtime_types/:overtime_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "overtime_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Overtime Type"
+        },
+        {
+          "info": {
+            "name": "Destroy Overtime Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/overtime_types/:overtime_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "overtime_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy Overtime Type"
+        },
+        {
+          "info": {
+            "name": "Get Overtime Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/integration_maps/overtime_type/:global_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Overtime Type"
+        },
+        {
+          "info": {
+            "name": "Edit Overtime Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/integration_maps/overtime_type/:global_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Overtime Type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Employees HR Letters API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employees HR Letters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List HR Letters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letters",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List HR Letters"
+        },
+        {
+          "info": {
+            "name": "Create HR Letter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letters",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create HR Letter"
+        },
+        {
+          "info": {
+            "name": "Get HR Letter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letters/:hr_letter_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get HR Letter"
+        },
+        {
+          "info": {
+            "name": "Update HR Letter",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letters/:hr_letter_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update HR Letter"
+        },
+        {
+          "info": {
+            "name": "Delete HR Letter",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letters/:hr_letter_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete HR Letter"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

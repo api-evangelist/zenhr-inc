@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals HR Letter Templates API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "HR Letter Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List HR Letter Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_templates",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List HR Letter Templates"
+        },
+        {
+          "info": {
+            "name": "Create HR Letter Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_templates",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create HR Letter Template"
+        },
+        {
+          "info": {
+            "name": "Get HR Letter Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_templates/:hr_letter_template_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_template_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get HR Letter Template"
+        },
+        {
+          "info": {
+            "name": "Update HR Letter Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_templates/:hr_letter_template_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_template_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update HR Letter Template"
+        },
+        {
+          "info": {
+            "name": "Delete HR Letter Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_templates/:hr_letter_template_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_template_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete HR Letter Template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Positions API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Positions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Positions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/positions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Positions"
+        },
+        {
+          "info": {
+            "name": "Create Position",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/positions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Position"
+        },
+        {
+          "info": {
+            "name": "Get Position",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/positions/:position_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "position_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Position"
+        },
+        {
+          "info": {
+            "name": "Edit Position",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/positions/:position_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "position_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Position"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

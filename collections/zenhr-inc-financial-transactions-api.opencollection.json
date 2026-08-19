@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Financial Transactions API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Financial Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Financal Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transactions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Financal Transactions"
+        },
+        {
+          "info": {
+            "name": "Create Financial Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transactions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Financial Transaction"
+        },
+        {
+          "info": {
+            "name": "Get Financial Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transactions/:financial_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Financial Transaction"
+        },
+        {
+          "info": {
+            "name": "Edit Financial Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transactions/:financial_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Financial Transaction"
+        },
+        {
+          "info": {
+            "name": "Destroy Financial Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transactions/:financial_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy Financial Transaction"
+        },
+        {
+          "info": {
+            "name": "Get Financial Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/integration_maps/financial_transaction/:global_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Financial Transactions"
+        },
+        {
+          "info": {
+            "name": "Edit Financial Transaction Copy",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/integration_maps/financial_transaction/:global_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Financial Transaction Copy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,188 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Employee Financial Transactions API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employee Financial Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Employee Financal Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_transactions/:financial_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Employee Financal Transactions"
+        },
+        {
+          "info": {
+            "name": "Update Employee Financal Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_transactions/:financial_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update Employee Financal Transactions"
+        },
+        {
+          "info": {
+            "name": "Destroy Employee Financal Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_transactions/:financial_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy Employee Financal Transactions"
+        },
+        {
+          "info": {
+            "name": "Create Employee Financal Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_transactions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Employee Financal Transactions"
+        },
+        {
+          "info": {
+            "name": "Create Employee Financal Transaction Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_transactions_requests",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Employee Financal Transaction Requests"
+        },
+        {
+          "info": {
+            "name": "Get Employee Financial Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee/financial_transactions/:financial_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Employee Financial Transaction"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

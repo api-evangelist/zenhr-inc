@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Employee Timeoff Transaction API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employee Timeoff Transaction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Employee Timeoff Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/timeoff_transactions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Employee Timeoff Transactions"
+        },
+        {
+          "info": {
+            "name": "Get Employee Timeoff Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/timeoff_transactions/:timeoff_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "timeoff_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Employee Timeoff Transaction"
+        },
+        {
+          "info": {
+            "name": "Create Timeoff Transaction Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/timeoff_transaction_requests",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Timeoff Transaction Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

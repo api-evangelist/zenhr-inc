@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Miscellaneous Requests API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Miscellaneous Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Employees Miscellaneous Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/miscellaneous_requests",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Employees Miscellaneous Requests"
+        },
+        {
+          "info": {
+            "name": "Create Miscellaneous Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/miscellaneous_requests",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Miscellaneous Request"
+        },
+        {
+          "info": {
+            "name": "Show Employees Miscellaneous Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/miscellaneous_requests/:miscellaneous_request_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "miscellaneous_request_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Show Employees Miscellaneous Requests"
+        },
+        {
+          "info": {
+            "name": "List Employees Miscellaneous Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/miscellaneous_requests",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Employees Miscellaneous Requests"
+        },
+        {
+          "info": {
+            "name": "Show Employees Miscellaneous Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/miscellaneous_requests/:miscellaneous_request_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "miscellaneous_request_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Show Employees Miscellaneous Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals HR Letter Types API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "HR Letter Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List HR Letter Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_types",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List HR Letter Types"
+        },
+        {
+          "info": {
+            "name": "Create HR Letter Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_types",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create HR Letter Type"
+        },
+        {
+          "info": {
+            "name": "Get HR Letter Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_types/:hr_letter_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get HR Letter Type"
+        },
+        {
+          "info": {
+            "name": "Update HR Letter Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_types/:hr_letter_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update HR Letter Type"
+        },
+        {
+          "info": {
+            "name": "Delete HR Letter Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/hr_letter_types/:hr_letter_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hr_letter_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete HR Letter Type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

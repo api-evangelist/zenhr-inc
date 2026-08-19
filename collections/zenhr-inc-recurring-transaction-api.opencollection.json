@@ -1,0 +1,185 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Recurring Transaction API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Recurring Transaction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Recurring Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_data/:financial_datum_id/recurring_transactions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_datum_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Recurring Transactions"
+        },
+        {
+          "info": {
+            "name": "Create Recurring Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_data/:financial_datum_id/recurring_transactions",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_datum_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Recurring Transaction"
+        },
+        {
+          "info": {
+            "name": "Get Recurring Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_data/:financial_datum_id/recurring_transactions/:recuuring_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_datum_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "recuuring_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Recurring Transaction"
+        },
+        {
+          "info": {
+            "name": "Update Recurring Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_data/:financial_datum_id/recurring_transactions/:recuuring_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_datum_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "recuuring_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update Recurring Transaction"
+        },
+        {
+          "info": {
+            "name": "Destroy Recurring Transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employees/:employee_id/financial_data/:financial_datum_id/recurring_transactions/:recuuring_transaction_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_datum_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "recuuring_transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy Recurring Transaction"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

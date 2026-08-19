@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Termination Setup API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Termination Setup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Branch Termination Setups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/termination_setups",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Branch Termination Setups"
+        },
+        {
+          "info": {
+            "name": "Show Branch Termination Setup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/termination_setups/:termination_setup_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "termination_setup_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Show Branch Termination Setup"
+        },
+        {
+          "info": {
+            "name": "Create Branch Termination Setup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/termination_setups/:termination_setup_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "termination_setup_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Branch Termination Setup"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

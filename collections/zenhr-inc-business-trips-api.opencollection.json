@@ -1,0 +1,211 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Business Trips API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Business Trips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "1. View All Business Trips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "1. View All Business Trips"
+        },
+        {
+          "info": {
+            "name": "3. Create Business Trip",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "3. Create Business Trip"
+        },
+        {
+          "info": {
+            "name": "2. View Business Trip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips/:business_trip_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "business_trip_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "2. View Business Trip"
+        },
+        {
+          "info": {
+            "name": "4. Update Business Trip",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips/:business_trip_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "business_trip_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "4. Update Business Trip"
+        },
+        {
+          "info": {
+            "name": "5. Delete Business Trip",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips/:business_trip_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "business_trip_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "5. Delete Business Trip"
+        },
+        {
+          "info": {
+            "name": "6. View Available Travel Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips/travel_types",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "6. View Available Travel Types"
+        },
+        {
+          "info": {
+            "name": "7. View Available Destination Cities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips/destinations_cities",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "7. View Available Destination Cities"
+        },
+        {
+          "info": {
+            "name": "8. View Available Arrival Cities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips/all_available_arrivals",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "8. View Available Arrival Cities"
+        },
+        {
+          "info": {
+            "name": "9. View Available Destinations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_trips/destinations_data",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "9. View Available Destinations"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

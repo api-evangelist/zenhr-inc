@@ -1,0 +1,143 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Business Travel Policies API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Business Travel Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "1. View All Business Travel Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_travel_policies",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "1. View All Business Travel Policies"
+        },
+        {
+          "info": {
+            "name": "4. Create Business Travel Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_travel_policies",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "4. Create Business Travel Policy"
+        },
+        {
+          "info": {
+            "name": "2. View Business Travel Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_travel_policies/:business_travel_policy_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "business_travel_policy_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "2. View Business Travel Policy"
+        },
+        {
+          "info": {
+            "name": "3. Update Business Travel Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_travel_policies/:business_travel_policy_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "business_travel_policy_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "3. Update Business Travel Policy"
+        },
+        {
+          "info": {
+            "name": "5. Delete Business Travel Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/business_travel_policies/:business_travel_policy_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "business_travel_policy_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "5. Delete Business Travel Policy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

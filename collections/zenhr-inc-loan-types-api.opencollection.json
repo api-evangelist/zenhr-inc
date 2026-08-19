@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Loan Types API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Loan Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Loan Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/loan_types/:loan_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "loan_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Loan Types"
+        },
+        {
+          "info": {
+            "name": "Create Loan Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/loan_types/:loan_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "loan_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Loan Type"
+        },
+        {
+          "info": {
+            "name": "Edit Loan Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/loan_types/:loan_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "loan_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Loan Type"
+        },
+        {
+          "info": {
+            "name": "Get Loan Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/integration_maps/loan_type/:global_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Loan Type"
+        },
+        {
+          "info": {
+            "name": "Edit Loan Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch/integration_maps/loan_type/:global_id",
+            "params": [
+              {
+                "name": "branch",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Loan Type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

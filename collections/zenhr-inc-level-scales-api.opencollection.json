@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Level Scales API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Level Scales",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Level Scales",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/competencies_categories/:competencies_category_id/level_scales",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "competencies_category_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Level Scales"
+        },
+        {
+          "info": {
+            "name": "Create Level Scale",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/competencies_categories/:competencies_category_id/level_scales",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "competencies_category_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Level Scale"
+        },
+        {
+          "info": {
+            "name": "Get Level Scale",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/competencies_categories/:competencies_category_id/level_scales/:level_scale_id ",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "competencies_category_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "level_scale_id ",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Level Scale"
+        },
+        {
+          "info": {
+            "name": "Update Level Scale",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/competencies_categories/:competencies_category_id/level_scales/:level_scale_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "competencies_category_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "level_scale_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update Level Scale"
+        },
+        {
+          "info": {
+            "name": "Delete Level Scale",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/competencies_categories/:competencies_category_id/level_scales/:level_scale_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "competencies_category_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "level_scale_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Level Scale"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

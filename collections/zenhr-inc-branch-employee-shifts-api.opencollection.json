@@ -1,0 +1,140 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Branch Employee Shifts API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Branch Employee Shifts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Branch Employee Shifts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employee_shifts",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Branch Employee Shifts"
+        },
+        {
+          "info": {
+            "name": "Show Branch Employee Shifts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employee_shifts/:work_shift_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "work_shift_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Show Branch Employee Shifts"
+        },
+        {
+          "info": {
+            "name": "Create Employee Shift",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employee_shifts/:employee_shift_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_shift_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Employee Shift"
+        },
+        {
+          "info": {
+            "name": "Update Employee Shift",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employee_shifts/:employee_shift_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_shift_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update Employee Shift"
+        },
+        {
+          "info": {
+            "name": "Delete Employee Shift",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/employee_shifts/:employee_shift_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "employee_shift_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Employee Shift"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

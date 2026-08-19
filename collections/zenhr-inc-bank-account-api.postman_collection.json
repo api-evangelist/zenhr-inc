@@ -1,0 +1,311 @@
+{
+  "item": [
+    {
+      "id": "e12c74fa-79bf-470b-b9a8-6ac1b13bab3b",
+      "name": "Bank Account",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "99aba0c5-97ce-4de5-a556-3ee7ad4647f8",
+          "name": "List Employee Bank Account",
+          "request": {
+            "name": "List Employee Bank Account",
+            "description": {},
+            "url": {
+              "path": [
+                "branches",
+                ":branch_id",
+                "employees",
+                ":employee_id",
+                "bank_accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "branch_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employee_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3f39fd3-4af8-489a-bb5a-e14b9bc183b8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "employees",
+                    ":employee_id",
+                    "bank_accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employee_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"allowed_actions\": [],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"data\": [\n    {\n      \"id\": 71444,\n      \"owner_id\": 138679,\n      \"owner_type\": \"Employee\",\n      \"bank_branch\": {\n        \"bank_branch_id\": 6,\n        \"id\": 6,\n        \"bank\": {\n          \"id\": 1,\n          \"name\": {\n            \"ar\": \"البنك العربي\",\n            \"en\": \"Arab Bank\"\n          },\n          \"country\": {\n            \"country_id\": 111,\n            \"id\": 111,\n            \"name\": {\n              \"ar\": \"الأردن\",\n              \"en\": \"Jordan\"\n            },\n            \"country_code\": \"JO\",\n            \"region\": \"mena\"\n          },\n          \"routing_id\": \"10\",\n          \"short_code\": null,\n          \"swift_code\": \"ARABJOAXXXX\"\n        },\n        \"swift_code\": null,\n        \"name\": {\n          \"ar\": null,\n          \"en\": \"Main Branch\"\n        }\n      },\n      \"iban\": \"SA0380000000608010167519\",\n      \"bank_account_number\": \"78342012891\",\n      \"percent_transfer\": 100,\n      \"related_establishment_number\": null,\n      \"swift_code\": null,\n      \"exchange_account\": \"\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f8d1f7ec-1b77-46bf-8db9-ee854959296a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "employees",
+                    ":employee_id",
+                    "bank_accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employee_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"allowed_actions\": [],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"data\": [\n    {\n      \"id\": 71444,\n      \"owner_id\": 138679,\n      \"owner_type\": \"Employee\",\n      \"bank_branch\": {\n        \"bank_branch_id\": 6,\n        \"id\": 6,\n        \"bank\": {\n          \"id\": 1,\n          \"name\": {\n            \"ar\": \"البنك العربي\",\n            \"en\": \"Arab Bank\"\n          },\n          \"country\": {\n            \"country_id\": 111,\n            \"id\": 111,\n            \"name\": {\n              \"ar\": \"الأردن\",\n              \"en\": \"Jordan\"\n            },\n            \"country_code\": \"JO\",\n            \"region\": \"mena\"\n          },\n          \"routing_id\": \"10\",\n          \"short_code\": null,\n          \"swift_code\": \"ARABJOAXXXX\"\n        },\n        \"swift_code\": null,\n        \"name\": {\n          \"ar\": null,\n          \"en\": \"Main Branch\"\n        }\n      },\n      \"iban\": \"SA0380000000608010167519\",\n      \"bank_account_number\": \"78342012891\",\n      \"percent_transfer\": 100,\n      \"related_establishment_number\": null,\n      \"swift_code\": null,\n      \"exchange_account\": \"\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "92e41533-7e6d-494c-b4fa-13bcacd0b4cf",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "branches",
+                    ":branch_id",
+                    "employees",
+                    ":employee_id",
+                    "bank_accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "branch_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employee_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"allowed_actions\": [],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"data\": [\n    {\n      \"id\": 71444,\n      \"owner_id\": 138679,\n      \"owner_type\": \"Employee\",\n      \"bank_branch\": {\n        \"bank_branch_id\": 6,\n        \"id\": 6,\n        \"bank\": {\n          \"id\": 1,\n          \"name\": {\n            \"ar\": \"البنك العربي\",\n            \"en\": \"Arab Bank\"\n          },\n          \"country\": {\n            \"country_id\": 111,\n            \"id\": 111,\n            \"name\": {\n              \"ar\": \"الأردن\",\n              \"en\": \"Jordan\"\n            },\n            \"country_code\": \"JO\",\n            \"region\": \"mena\"\n          },\n          \"routing_id\": \"10\",\n          \"short_code\": null,\n          \"swift_code\": \"ARABJOAXXXX\"\n        },\n        \"swift_code\": null,\n        \"name\": {\n          \"ar\": null,\n          \"en\": \"Main Branch\"\n        }\n      },\n      \"iban\": \"SA0380000000608010167519\",\n      \"bank_account_number\": \"78342012891\",\n      \"percent_transfer\": 100,\n      \"related_establishment_number\": null,\n      \"swift_code\": null,\n      \"exchange_account\": \"\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.zenhr.com/api/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read:branch read:employee accessed_employees_branches:employee read:professional_info read:termination read:employee_disciplinary_actions read:financial_transaction read:performance_evaluation read:timeoff_transaction"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.zenhr.com/en/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://api.zenhr.com/en/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b221dc4c-905f-4807-b8fe-5264969a50fb",
+    "name": "ZenHR Approvals Bank Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the ZenHR HR & payroll platform. Integrate external applications with ZenHR to manage branches, employees, master/professional/financial data, payroll (salaries, financial transactions, loans, overtime), time off, attendance, competencies, HR letters, terminations, business travel, and documents. Responds in JSON with standard HTTP status codes; authenticated via OAuth 2.0 (authorization code + PKCE). Derived by API Evangelist from the provider's published Postman documentation collection.\n\nContact Support:\n Name: ZenHR DevOps\n Email: devops@zenhr.com",
+      "type": "text/plain"
+    }
+  }
+}

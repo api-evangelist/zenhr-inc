@@ -1,10 +1,9 @@
-# API Evangelist enrichment artifact
 generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/zenhr-inc-openapi.yml
-notes: No official hosted/remote ZenHR MCP server was found. Candidate tool surface derived from OpenAPI operations; each
-  tool maps to one operationId.
+notes: No official hosted/remote ZenHR MCP server was found. Candidate tool surface derived from OpenAPI
+  operations; each tool maps to one operationId.
 server:
   name: zenhr
   transport: http
@@ -27,3 +26,9 @@ tools:
 - name: who_am_i
   description: Identify the authenticated principal
   source_operation: openapi/zenhr-inc-openapi.yml#whoAmI
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census

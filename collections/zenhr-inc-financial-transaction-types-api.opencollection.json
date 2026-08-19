@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZenHR Approvals Financial Transaction Types API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.zenhr.com/en/oauth/authorize",
+      "accessTokenUrl": "https://api.zenhr.com/en/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Financial Transaction Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Financal Transaction Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transaction_types",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Financal Transaction Types"
+        },
+        {
+          "info": {
+            "name": "Create Financial Transaction Type Copy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transaction_types",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create Financial Transaction Type Copy"
+        },
+        {
+          "info": {
+            "name": "Get Financial Transaction Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transaction_types/:financial_transaction_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Financial Transaction Type"
+        },
+        {
+          "info": {
+            "name": "Update Financial Transaction Type Copy 2",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transaction_types/:financial_transaction_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update Financial Transaction Type Copy 2"
+        },
+        {
+          "info": {
+            "name": "Delete Financial Transaction Type Copy 3",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/financial_transaction_types/:financial_transaction_type_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "financial_transaction_type_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Financial Transaction Type Copy 3"
+        },
+        {
+          "info": {
+            "name": "Get Financial Transaction Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/integration_maps/financial_transaction_type/:global_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Financial Transaction Type"
+        },
+        {
+          "info": {
+            "name": "Update Financial Transaction Type Copy 3",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.zenhr.com/api/v3/branches/:branch_id/integration_maps/financial_transaction_type/:global_id",
+            "params": [
+              {
+                "name": "branch_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "global_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update Financial Transaction Type Copy 3"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
