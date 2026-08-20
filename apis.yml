@@ -42,6 +42,17 @@ tags:
 - MENA
 - Attendance
 - Time Off
+- Software-as-a-Service
+tags_raw:
+- Company
+- Human Resources
+- HR
+- Payroll
+- HRMS
+- Employee Management
+- MENA
+- Attendance
+- Time Off
 - SaaS
 maintainers:
 - FN: Kin Lane
@@ -433,7 +444,8 @@ apis:
   description: The General API from ZenHR Inc — 2 operation(s) for general.
   humanURL: https://api-docs.zenhr.com/
   baseURL: https://app.zenhr.com/api/v3
-  tags:
+  tags: []
+  tags_raw:
   - General
   properties:
   - type: OpenAPI
@@ -712,6 +724,8 @@ apis:
   humanURL: https://api-docs.zenhr.com/
   baseURL: https://app.zenhr.com/api/v3
   tags:
+  - Time-Offs
+  tags_raw:
   - Timeoffs
   properties:
   - type: OpenAPI
@@ -724,6 +738,8 @@ apis:
   humanURL: https://api-docs.zenhr.com/
   baseURL: https://app.zenhr.com/api/v3
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
