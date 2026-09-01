@@ -736,7 +736,7 @@ apis:
   humanURL: https://api-docs.zenhr.com/
   baseURL: https://app.zenhr.com/api/v3
   tags:
-  - Timeoffs
+  - Time-Offs
   tags_raw:
   - Timeoffs
   properties:
