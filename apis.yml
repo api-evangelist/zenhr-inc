@@ -730,20 +730,6 @@ apis:
     url: openapi/zenhr-inc-timeoff-transaction-api-openapi.yml
   - type: Postman
     url: openapi/zenhr-inc-postman-collection.json
-- aid: zenhr-inc:zenhr-inc-timeoffs-api
-  name: ZenHR Inc Timeoffs API
-  description: The Timeoffs API from ZenHR Inc — 2 operation(s) for timeoffs.
-  humanURL: https://api-docs.zenhr.com/
-  baseURL: https://app.zenhr.com/api/v3
-  tags:
-  - Time-Offs
-  tags_raw:
-  - Timeoffs
-  properties:
-  - type: OpenAPI
-    url: openapi/zenhr-inc-timeoffs-api-openapi.yml
-  - type: Postman
-    url: openapi/zenhr-inc-postman-collection.json
 - aid: zenhr-inc:zenhr-inc-users-api
   name: ZenHR Inc Users API
   description: The Users API from ZenHR Inc — 1 operation(s) for users.
@@ -780,6 +766,18 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/zenhr-inc-work-shifts-api-openapi.yml
+  - type: Postman
+    url: openapi/zenhr-inc-postman-collection.json
+- aid: zenhr-inc:zenhr-inc-time-offs-api
+  name: ZenHR Inc Time Offs API
+  description: The Time Offs API from ZenHR Inc — 2 operation(s) for time offs.
+  humanURL: https://api-docs.zenhr.com/
+  baseURL: https://app.zenhr.com/api/v3
+  tags:
+  - Time Offs
+  properties:
+  - type: OpenAPI
+    url: openapi/zenhr-inc-time-offs-api-openapi.yml
   - type: Postman
     url: openapi/zenhr-inc-postman-collection.json
 common:
