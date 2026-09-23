@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ZenHR Approvals Financial Transactions API
+  title: ZenHR Financial Transactions API
   version: v3
-  description: REST API for the ZenHR HR & payroll platform. Integrate external applications with ZenHR to manage branches, employees, master/professional/financial data, payroll (salaries, financial transactions, loans, overtime), time off, attendance, competencies, HR letters, terminations, business travel, and documents. Responds in JSON with standard HTTP status codes; authenticated via OAuth 2.0 (authorization code + PKCE). Derived by API Evangelist from the provider's published Postman documentation collection.
+  description: REST API for the ZenHR HR & payroll platform.
   contact:
     name: ZenHR DevOps
     email: devops@zenhr.com
