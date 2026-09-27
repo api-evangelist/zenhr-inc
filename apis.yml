@@ -1,5 +1,5 @@
 aid: zenhr-inc
-name: ZenHR Inc
+name: ZenHR
 description: >-
   ZenHR is an AI-powered HR and payroll management platform (HRMS) serving businesses across the MENA
   region, with localization for Saudi Arabia, UAE, Egypt, Iraq, Jordan, and Kuwait (GOSI, WPS, social
@@ -768,13 +768,11 @@ apis:
   - type: Postman
     url: openapi/zenhr-inc-postman-collection.json
 - aid: zenhr-inc:zenhr-inc-time-offs-api
-  name: ZenHR Inc Time Offs API
-  description: The Time Offs API from ZenHR Inc — 2 operation(s) for time offs.
+  name: ZenHR Time Offs API
+  description: The Time Offs API from ZenHR — 2 operation(s) for time offs.
   humanURL: https://api-docs.zenhr.com/
   baseURL: https://app.zenhr.com/api/v3
   tags:
-  - Time-Offs
-  tags_raw:
   - Time Offs
   properties:
   - type: OpenAPI
@@ -852,3 +850,4 @@ x-enrichment:
   status: enriched
   artifacts_added: 22
   pass: local-v1
+x-legal-name: ZenHR Inc
