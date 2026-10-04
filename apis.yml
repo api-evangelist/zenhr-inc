@@ -773,6 +773,8 @@ apis:
   humanURL: https://api-docs.zenhr.com/
   baseURL: https://app.zenhr.com/api/v3
   tags:
+  - Time-Offs
+  tags_raw:
   - Time Offs
   properties:
   - type: OpenAPI
