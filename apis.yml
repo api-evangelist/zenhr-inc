@@ -43,7 +43,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 tags:
 - Company
 - Human Resources
@@ -780,6 +780,10 @@ apis:
   - type: Postman
     url: openapi/zenhr-inc-postman-collection.json
 common:
+- url: https://blog.zenhr.com/en
+  type: Blog
+- url: https://blog.zenhr.com/en/rss.xml
+  type: BlogRSS
 - type: Overlay
   url: overlays/zenhr-inc-openapi-overlay.yaml
 - type: Website
